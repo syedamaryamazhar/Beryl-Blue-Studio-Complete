@@ -22,7 +22,7 @@ const About = () =>{
                 </section>
 
                 <section className="origin">
-                    <div className="Text">
+                    <div className="text">
                         <h3>Origin of Beryl Blue Studio</h3>
                         <p>
                                Welcome to Beryl Blue Studio, a space where imagination takes shape
@@ -36,7 +36,7 @@ const About = () =>{
                        <img src="/images/img1.jpg" alt="Origin" className="image" />
                        </section>
 
-                       <section className="Timeline">
+                       <section className="timeline">
                            <img src="/images/img1.jpg" alt="Origin" className="image" />
 
                            <div className="text">

@@ -7,11 +7,12 @@ import './index.css'
 import Home from './pages/Homepage'
 import Productspage from './pages/Productspage'
 import ProductDetail from './pages/Productdetail'
+import About from './pages/About'
 
 function App() {
   return (
     <div>
-      <ProductDetail />
+      <About/>
     </div>
       
   )
