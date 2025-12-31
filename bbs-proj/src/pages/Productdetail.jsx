@@ -12,6 +12,17 @@ const ProductDetail = () => {
     const [added, setAdded] = useState(false);
     const [openSection, setOpenSection] = useState('details');
 
+    const featuredProducts = [
+        { id: 1, title:"Torquise Eid Card", price: 300, image: "/images/p1.jpeg"},
+        { id: 2, title: "Mushroom Tags Pack of 7", price: 210, image: "/images/p2.jpeg" },
+        { id: 3, title: "Chemistry Theme Birthday Card", price: 300, image: "/images/p3.jpeg" },
+        { id: 4, title: "Purple Eid Card", price: 300, image: "/images/p4.jpeg" },
+        { id: 5, title: "Mini Yellow Spring Album", price: 600, image: "/images/p5.jpeg" },
+        { id: 6, title: "Watercolor strips Birthday Card", price: 260, image: "/images/bookmark.jpeg" },
+        { id: 7, title: "Cherry Blossoms Card", price: 300, image: "/images/p7.jpeg" },
+        { id: 8, title: "Lavender Greeting Card", price: 300, image: "/images/p8.jpeg" },
+    ];
+
     const productsData ={
         1: { title: "Torquise Eid Card", price: "300", image: "p1.jpeg",smimage: "eidtorquise2.jpeg",smimage2: "p1.jpeg", category: "Greeting Card", type: "Physical", size: "6 x 12", material: "Hard chart" },
         2: { title: "Mushroom Tags Pack of 7", price: "210", image: "p2.jpeg",smimage: "tag1.jpeg",smimage2: "tag2.jpeg", category: "Tags", type: "Physical", size: "3 x 4", material: "Hard chart" },
@@ -56,115 +67,121 @@ const ProductDetail = () => {
     }
 
     return(
-        <main className='container'>
-            <section className='product-detail-grid'>
-                <div className='detail-left'>
-                    <div className='product-images'>
-                        <div className='small-image-gallery'>
-                            <img src={`/images/${product.smimage}`}  className={`${mainImage === product.smimage ? 'active' : ''}`}
-                            onClick={() => setMainImage(product.smimage)}/>
+        <div className='productsdetail'>
+            <Header />
+            <main className='container'>
+                <section className='product-detail-grid'>
+                    <div className='detail-left'>
+                        <div className='product-images'>
+                            <div className='small-image-gallery'>
+                                <img src={`/images/${product.smimage}`}  className='small-image1'
+                                onClick={() => setMainImage(product.smimage)}/>
 
-                            <img src={`/images/${product.smimage2}`}  className={`${mainImage === product.smimage2 ? 'active' : ''}`}
-                            onClick={() => setMainImage(product.smimage2)}/>
-                        </div>
-                        <img src={`/images/${mainImage}`} className='main-image'/>
-                    </div>
-                </div>
-
-                <div className='detail-right'>
-                    <h2 className='product-title'>{product.title}</h2>
-                    <p className='product-category'>{product.category}</p>
-
-                    <div className='price-row'>
-                        <p className='produt-price'>Rs {product.price}</p>
-                        <span className='sale-tag'>ON SALE</span>
-                    </div>
-
-                    <div className='qty-row'>
-                        <p>Quantity</p>
-                        <div className='qty-selector'>
-                            <button onClick={() => setQuantity(Math.max(1,quantity-1))}>-</button>
-                            <input type='number' value={quantity} readOnly/>
-                            <button onClick={() => setQuantity(Math.min(10, quantity+1))}>+</button>
-                        </div>
-                    </div>
-
-                    <button className={`btn-add-to-cart${added ? 'success': ''}`}
-                    onClick={handleAddToCart}
-                    disabled = {added}>
-                        {added ? 'Added to Cart!' : 'Add to Cart'}
-                    </button>
-
-                    <Link to="/" className='btn-customize-product'> Customize this Product</Link>
-                
-                    <div className='expandable-section'>
-                        <div>
-                            <div className='expand-title' onClick={() => setOpenSection(openSection === 'details' ? '': 'details')}>
-                                Item Details
-                                <span className={`arrow${openSection === 'details'? 'up':''}`}><img src='./images/arrow.svg'/></span>
+                                <img src={`/images/${product.smimage2}`}  className='small-image2'
+                                onClick={() => setMainImage(product.smimage2)}/>
                             </div>
+                            <img src={`/images/${mainImage}`} className='main-image'/>
+                        </div>
+                    </div>
 
-                            {openSection === 'details' && (
-                                <div className='expand-content'>
-                                    <p><b>Product Category: </b>{product.category}</p>
-                                    <p><b>Assembly: </b>HANDMADE</p>
-                                    <p><b>Type: </b>{product.type}</p>
-                                    <p><b>Material: </b>{product.material}</p>
-                                    <p><b>Size: </b>{product.size}</p>
+                    <div className='detail-right'>
+                        <h2 className='product-title'>{product.title}</h2>
+                        <p className='product-category'>{product.category}</p>
+
+                        <div className='price-row'>
+                            <p className='produt-price'>Rs {product.price}</p>
+                            <span className='sale-tag'>ON SALE</span>
+                        </div>
+
+                        <div className='qty-row'>
+                            <p>Quantity</p>
+                            <div className='qty-selector'>
+                                <button onClick={() => setQuantity(Math.max(1,quantity-1))}>-</button>
+                                <input type='number' value={quantity} readOnly/>
+                                <button onClick={() => setQuantity(Math.min(10, quantity+1))}>+</button>
+                            </div>
+                        </div>
+
+                        <button className={`btn-add-to-cart${added ? 'success': ''}`}
+                        onClick={handleAddToCart}
+                        disabled = {added}>
+                            {added ? 'Added to Cart!' : 'Add to Cart'}
+                        </button>
+
+                        <Link to="/" className='btn-customize-product'> Customize this Product</Link>
+                    
+                        <div className='expandable-section'>
+                            <div>
+                                <div className='expand-title' onClick={() => setOpenSection(openSection === 'details' ? '': 'details')}>
+                                    Item Details
+                                    <span className={`arrow${openSection === 'details'? 'up':''}`}><img src='./images/arrow.svg' className='expand-icon' width="16" height="16"/></span>
                                 </div>
 
-                            )}
-                        </div>
+                                {openSection === 'details' && (
+                                    <div className='expandable-content'>
+                                        <p><b>Product Category: </b>{product.category}</p>
+                                        <p><b>Assembly: </b>HANDMADE</p>
+                                        <p><b>Type: </b>{product.type}</p>
+                                        <p><b>Material: </b>{product.material}</p>
+                                        <p><b>Size: </b>{product.size}</p>
+                                    </div>
 
-                        <div>
-                            <div className='expand-title' onClick={() => setOpenSection(openSection === 'delivery' ? '': 'delivery')}>
-                                Item Details
-                                <span className={`arrow${openSection === 'delivery'? 'up':''}`}><img src='./images/arrow.svg'/></span>
+                                )}
                             </div>
 
-                            {openSection === 'delivery' && (
-                                <div className='expand-content'>
-                                    <p>Expect to get by 19-25 November</p>
-                                    <p>Delivery Charge: Rs 200</p>
-                                    <p>Dispatched from: Rawalpindi Pakistan</p>
+                            <div>
+                                <div className='expand-title' onClick={() => setOpenSection(openSection === 'delivery' ? '': 'delivery')}>
+                                    Delivery 
+                                    <span className={`arrow${openSection === 'delivery'? 'up':''}`}><img src='./images/arrow.svg' className='expand-icon' width="16" height="16"/></span>
                                 </div>
 
-                            )}
-                        </div>
+                                {openSection === 'delivery' && (
+                                    <div className='expandable-content'>
+                                        <p>Expect to get by 19-25 November</p>
+                                        <p>Delivery Charge: Rs 200</p>
+                                        <p>Dispatched from: Rawalpindi Pakistan</p>
+                                    </div>
 
-
-                        <div>
-                            <div className='expand-title' onClick={() => setOpenSection(openSection === 'policy' ? '': 'policy')}>
-                                Item Details
-                                <span className={`arrow${openSection === 'policy'? 'up':''}`}><img src='./images/arrow.svg'/></span>
+                                )}
                             </div>
 
-                            {openSection === 'policy' && (
-                                <div className='expand-content'>
-                                    <p><b>Order Policy:</b> Customers have 24 hours to cancel the order made.</p>
-                                    <p><b>Refunds Policy:</b> Non refundable</p>
+
+                            <div>
+                                <div className='expand-title' onClick={() => setOpenSection(openSection === 'policy' ? '': 'policy')}>
+                                    Return Policy
+                                    <span className={`arrow${openSection === 'policy'? 'up':''}`}><img src='./images/arrow.svg' className='expand-icon' width="16" height="16"/></span>
                                 </div>
-                            )}
+
+                                {openSection === 'policy' && (
+                                    <div className='expandable-content'>
+                                        <p><b>Order Policy:</b> Customers have 24 hours to cancel the order made.</p>
+                                        <p><b>Refunds Policy:</b> Non refundable</p>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section className="container">
-                <h2 className="section-title">More Like This</h2>
-                    <div className="products-grid">
-                        {featuredProducts.map((product) => (
-                            <ProductCard
-                                key={product.id}
-                                id={product.id}
-                                title={product.title}
-                                price={product.price}
-                                image={product.image}
-                            />
-                        ))}
-                    </div>
-            </section>
-        </main>
-    )
+                <section className="container">
+                    <h2 className="section-title">More Like This</h2>
+                        <div className="products-grid">
+                            {featuredProducts.map((product) => (
+                                <ProductCard
+                                    key={product.id}
+                                    id={product.id}
+                                    title={product.title}
+                                    price={product.price}
+                                    image={product.image}
+                                />
+                            ))}
+                        </div>
+                </section>
+            </main>
+            <Footer />
+        </div>
+    );
 
-}
+};
+
+export default ProductDetail;
