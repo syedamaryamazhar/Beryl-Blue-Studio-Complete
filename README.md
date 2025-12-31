@@ -1,1 +1,0 @@
-# Beryl-Blue-Studio-Complete
