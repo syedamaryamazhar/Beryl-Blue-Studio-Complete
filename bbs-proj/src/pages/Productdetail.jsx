@@ -43,6 +43,10 @@ const ProductDetail = () => {
         window.scrollTo(0,0);
     }, [id, product.image]);
 
+    const toggleSection = (section) => {
+        setOpenSection(openSection === section ? '' : section);
+    };
+    
     const handleAddToCart = () => {
         const cartItem = {
             id: product.id,
@@ -85,7 +89,7 @@ const ProductDetail = () => {
                     </div>
 
                     <div className='detail-right'>
-                        <h2 className='product-title'>{product.title}</h2>
+                        <h2 className='product-name'>{product.title}</h2>
                         <p className='product-category'>{product.category}</p>
 
                         <div className='price-row'>
@@ -108,57 +112,51 @@ const ProductDetail = () => {
                             {added ? 'Added to Cart!' : 'Add to Cart'}
                         </button>
 
-                        <Link to="/" className='btn-customize-product'> Customize this Product</Link>
+                        <Link to="/"><button className='btn-customize-product'> Customize this Product</button></Link>
                     
                         <div className='expandable-section'>
                             <div>
-                                <div className='expand-title' onClick={() => setOpenSection(openSection === 'details' ? '': 'details')}>
-                                    Item Details
-                                    <span className={`arrow${openSection === 'details'? 'up':''}`}><img src='./images/arrow.svg' className='expand-icon' width="16" height="16"/></span>
+                                <div className='expand-title' onClick={() => toggleSection('details')}>
+                                    Details 
+                                    <img src='./images/arrow.svg' className={`expand-icon ${openSection === 'details'?'open':''}`}
+                                    width="16" height="16"/>
                                 </div>
-
-                                {openSection === 'details' && (
-                                    <div className='expandable-content'>
-                                        <p><b>Product Category: </b>{product.category}</p>
-                                        <p><b>Assembly: </b>HANDMADE</p>
-                                        <p><b>Type: </b>{product.type}</p>
-                                        <p><b>Material: </b>{product.material}</p>
-                                        <p><b>Size: </b>{product.size}</p>
-                                    </div>
-
-                                )}
+                                <div className={`expandable-content ${openSection === 'details'?'open':''}`}>
+                                    <p><b>Product Category: </b>{product.category}</p>
+                                    <p><b>Assembly: </b>HANDMADE</p>
+                                    <p><b>Type: </b>{product.type}</p>
+                                    <p><b>Material: </b>{product.material}</p>
+                                    <p><b>Size: </b>{product.size}</p>
+                                </div>
                             </div>
 
-                            <div>
-                                <div className='expand-title' onClick={() => setOpenSection(openSection === 'delivery' ? '': 'delivery')}>
+                            <div className='expandable-section'>
+                                <div className='expand-title' onClick={() => toggleSection('delivery')}>
                                     Delivery 
-                                    <span className={`arrow${openSection === 'delivery'? 'up':''}`}><img src='./images/arrow.svg' className='expand-icon' width="16" height="16"/></span>
+                                    <img src='./images/arrow.svg' className={`expand-icon ${openSection === 'delivery'?'open':''}`}
+                                    width="16" height="16"/>
                                 </div>
-
-                                {openSection === 'delivery' && (
-                                    <div className='expandable-content'>
-                                        <p>Expect to get by 19-25 November</p>
-                                        <p>Delivery Charge: Rs 200</p>
-                                        <p>Dispatched from: Rawalpindi Pakistan</p>
-                                    </div>
-
-                                )}
+                                <div className={`expandable-content ${openSection === 'delivery'?'open':''}`}>
+                                    <p>Expect to get by 19-25 November</p>
+                                    <p>Delivery Charge: Rs 200</p>
+                                    <p>Dispatched from: Rawalpindi Pakistan</p>
+                                </div>
                             </div>
 
 
-                            <div>
-                                <div className='expand-title' onClick={() => setOpenSection(openSection === 'policy' ? '': 'policy')}>
-                                    Return Policy
-                                    <span className={`arrow${openSection === 'policy'? 'up':''}`}><img src='./images/arrow.svg' className='expand-icon' width="16" height="16"/></span>
+                            <div className='expandable-section'>
+                                <div className='expand-title' onClick={() => toggleSection('policy')}>
+                                    Return policy 
+                                    <img src='./images/arrow.svg' className={`expand-icon ${openSection === 'policy'?'open':''}`}
+                                    width="16" height="16"/>
                                 </div>
-
-                                {openSection === 'policy' && (
-                                    <div className='expandable-content'>
-                                        <p><b>Order Policy:</b> Customers have 24 hours to cancel the order made.</p>
-                                        <p><b>Refunds Policy:</b> Non refundable</p>
-                                    </div>
-                                )}
+                                <div className={`expandable-content ${openSection === 'policy'?'open':''}`}>
+                                    <p>Expect to get by 19-25 November</p>
+                                    <p>Delivery Charge: Rs 200</p>
+                                    <p>Dispatched from: Rawalpindi Pakistan</p>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </section>

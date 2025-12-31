@@ -35,7 +35,7 @@
             object-fit: cover;
         }
 
-        .product-title {
+        .product-name {
             font-family: var(--font-playfairdisplay);
             font-size: 28px;
             font-weight: 700;
@@ -97,7 +97,7 @@
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .qty-selector button:hover { background-color: var(--Seondary); }
+        .qty-selector button:hover { background-color: var(--Secondary); }
 
         .btn-add-to-cart {
             background-color: var(--Primary);
@@ -111,7 +111,7 @@
             width: 100%;
             transition: background-color 0.2s;
         }
-        .btn-add-to-cart:hover { background-color: var(--Seondary); 
+        .btn-add-to-cart:hover { background-color: var(--Secondary); 
             color: var(--Primary);
         }
 
@@ -148,6 +148,10 @@
             margin-left: 10px;
             transition: transform 0.3s;
         }
+
+    .expand-icon.open {
+            transform: rotate(180deg);
+    }
         .expandable-content {
             font-size: 13px;
             color: #666;
