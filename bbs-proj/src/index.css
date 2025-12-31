@@ -1,16 +1,10 @@
 :root {
     --Primary: #1A4359;
-    --Seondary: #A7C3C6;
+    --Secondary: #A7C3C6;
     --Basecolor: #DAE3E0;
     --accent-1: #F5EBEC;
     --accent-2: #E0D1D4 ;
     --CTA: #D4A598;
     --font-poppins: 'Poppins';  
     --font-playfairdisplay: 'Playfair Display';
-}
-body {
-    font-family: var(--font-poppins);
-    color: black;
-    margin: 0;
-    background-color: white;
 }

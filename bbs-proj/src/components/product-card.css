@@ -1,0 +1,40 @@
+.product-box {
+    text-decoration: none;
+}
+
+.product-image{
+    width: 100%;
+    aspect-ratio: 280 / 330; 
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: none; 
+    margin-bottom: 5px;
+    transition: transform 0.15s ease-out;
+}
+
+.product-image:hover{
+    transform: scale(1.03);
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+}
+
+.product-title{
+    margin: 0;
+    font-size: 15px;
+}
+        
+.price {
+    font-size: 15px;
+    margin: 5px;
+    color: black;
+}
+
+.icon-bag {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}

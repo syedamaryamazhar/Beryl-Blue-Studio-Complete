@@ -3,14 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
-import Header from './components/header.jsx'
-import Footer from './components/footer.jsx'
+import './index.css'
+import Home from './pages/Homepage'
 
 function App() {
   return (
     <div>
-      <Header />
-      <Footer />
+      <Home />
     </div>
       
   )
