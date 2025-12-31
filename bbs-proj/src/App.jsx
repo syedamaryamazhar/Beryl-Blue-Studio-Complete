@@ -5,11 +5,12 @@ import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import './index.css'
 import Home from './pages/Homepage'
+import Productspage from './pages/Productspage'
 
 function App() {
   return (
     <div>
-      <Home />
+      <Productspage />
     </div>
       
   )

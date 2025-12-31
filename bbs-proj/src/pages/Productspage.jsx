@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
 import { Link, BrowserRouter, Route, Routes } from 'react-router-dom';
+import './Productspage.css'
 import ProductCard from "/src/components/product-card";
 import Header from "/src/components/header";
 import Footer from "/src/components/footer";
 
 const ProductsPage = () => {
     //tracking active category bar
-    const [activeCategory, setActiveCategory] = useState('cards');
+    const [activeCategory, setActiveCategory] = useState('all');
 
     const categories = [
+        {id: 'all', label: 'All'},
         {id: 'cards', label: 'Cards'},
         {id: 'bookmarks', label: 'Bookmarks'},
         {id: 'albums', label: 'Albums'},
@@ -29,7 +31,7 @@ const ProductsPage = () => {
         { id: 8, title: "Lavender Greeting Card", price: 300, image: "/images/p8.jpeg" },
     ];
 
-    const filteredProducts = activeCategory === 'cards'? allProducts:allProducts.filter(p => p.category === activeCategory);
+    const filteredProducts = activeCategory === 'all'? featuredProducts:featuredProducts.filter(p => p.category === activeCategory);
 
     return(
         <div className='productspage'>
@@ -67,6 +69,10 @@ const ProductsPage = () => {
                 <Link to="/" class="page-number">3</Link>
                 <Link to="/" class="page-number">4</Link>
             </section>
+
+            <Footer />
         </div>
-    )
-}
+    );
+};
+
+export default ProductsPage;
