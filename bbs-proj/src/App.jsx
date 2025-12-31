@@ -8,14 +8,15 @@ import Home from './pages/Homepage'
 import Productspage from './pages/Productspage'
 import ProductDetail from './pages/Productdetail'
 import About from './pages/About'
+import Cart from './pages/Cart'
 
 function App() {
   return (
     <div>
-      <About/>
+      <Cart/>
     </div>
       
   )
 }
 
-export default App
+export default App;

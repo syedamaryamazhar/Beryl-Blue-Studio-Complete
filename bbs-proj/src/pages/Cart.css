@@ -1,0 +1,217 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+body{
+    font-family: 'Poppins' ;
+    background-color:white;
+    margin: 0;
+    padding: 0;
+    color:black;
+}
+
+.container{
+   max-width: 1280px;
+    margin: 0px auto;
+    padding:0 auto;
+}
+
+
+
+main.cart-section {
+  width: 85%;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.cart-section h2{
+    font-family: 'Playfair Display';
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.sub-text{
+    font-family: 'Poppins';
+    font-weight: 300;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.progress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.step{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle{
+    width: 25px ;
+    height: 25px;
+    border-radius:50% ;
+    background-color:#C6D3D2 ;
+}
+
+.circle.active{
+    background-color:  #1A4359;
+}
+
+.step p{
+    margin-top: 8px;
+    font-family: 'Poppins';
+    font-size: 14px;
+    color:black;
+}
+
+.line{
+    width:70px ;
+    height: 2px;
+    background-color: #C6D3D2 ;
+}
+
+
+
+.cart-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.left-side{
+    flex: 1;
+    background-color:  #F7EAEA;
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+
+
+
+.cart-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:  #F2DCDC;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.item-info{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.item-img .image{
+    width: 70px;
+    height: 70px;
+    background-color:  #D9D9D9;
+    border-radius: 8px;
+}
+
+.item-details p{
+    margin: 3px 0;
+    text-align: left;
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.box button{
+    background-color:  white;
+    border: 1px solid #ccc;
+    width:25px ;
+    height: 25px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.box input{
+    width: 30px;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
+.right{
+    background-color:  #F7EAEA;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.note{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.note input{
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.note button:hover{
+    background-color: #A7C3C6;
+}
+
+.note button{
+    background-color:  #1A4359;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.order-detail p{
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+.order-detail .total{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.Checkout{
+    width: 100%;
+    background-color: #1A4359;
+    color:white;
+    border: none;
+    padding: 10px 0;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.Checkout:hover{
+    background-color: #A7C3C6;
+}
+
