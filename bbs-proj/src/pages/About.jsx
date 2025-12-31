@@ -42,13 +42,13 @@ const About = () =>{
                            <div className="text">
                             <h3>Timeline of Our Creative Journey</h3>
                             <ul>
-                                  <li><strong>2019:</strong> The first handmade card was crafted.</li>
-                                  <li><strong>2020:</strong> Started themed paper crafts.</li>
-                                  <li><strong>2021:</strong> Official launch of Beryl Blue Studio.</li>
-                                  <li><strong>2022:</strong> Customized paper art introduced.</li>
-                                  <li><strong>2023:</strong> Participated in local craft fairs.</li>
-                                  <li><strong>2024–Present:</strong> Expanding creative collections.</li>
-                                   </ul>
+                                   <li><strong>2019:</strong>The first handmade card was crafted the spark that started it all.</li>
+                                   <li><strong>2020:</strong>Began creating themed paper crafts for friends and local art enthusiasts.</li>
+                                   <li><strong>2021:</strong> Officially launched Beryl Blue Studio as an independent creative space.</li>
+                                   <li><strong>2022:</strong>Expanded into customized paper art and started offering made-to-order designs.</li>
+                                   <li><strong>2023:</strong>Participated in local craft fairs and began building our online presence.</li>
+                                   <li><strong>2024-Present:</strong>Designing unique collections and exploring new forms of paper artistry.</li>
+                            </ul>
                            </div>
                        </section>
 
