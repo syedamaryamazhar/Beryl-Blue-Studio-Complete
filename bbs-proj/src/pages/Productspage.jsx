@@ -29,6 +29,14 @@ const ProductsPage = () => {
         { id: 6, title: "Watercolor strips Birthday Card", price: 260, image: "/images/bookmark.jpeg" },
         { id: 7, title: "Cherry Blossoms Card", price: 300, image: "/images/p7.jpeg" },
         { id: 8, title: "Lavender Greeting Card", price: 300, image: "/images/p8.jpeg" },
+        { id: 9, title:"Torquise Eid Card", price: 300, image: "/images/p1.jpeg"},
+        { id: 10, title: "Mushroom Tags Pack of 7", price: 210, image: "/images/p2.jpeg" },
+        { id: 11, title: "Chemistry Theme Birthday Card", price: 300, image: "/images/p3.jpeg" },
+        { id: 12, title: "Purple Eid Card", price: 300, image: "/images/p4.jpeg" },
+        { id: 13, title: "Mini Yellow Spring Album", price: 600, image: "/images/p5.jpeg" },
+        { id: 14, title: "Watercolor strips Birthday Card", price: 260, image: "/images/bookmark.jpeg" },
+        { id: 15, title: "Cherry Blossoms Card", price: 300, image: "/images/p7.jpeg" },
+        { id: 16, title: "Lavender Greeting Card", price: 300, image: "/images/p8.jpeg" },
     ];
 
     const filteredProducts = activeCategory === 'all'? featuredProducts:featuredProducts.filter(p => p.category === activeCategory);
@@ -40,7 +48,13 @@ const ProductsPage = () => {
                 <h2 className='section-title'>Shop by Category</h2>
                 <div className='box-groups'>
                     <div className='box-row'>
-                        {categories.map((opt => (
+                        {categories.slice(0,5).map((opt => (
+                            <button key={opt.id} className={`box-btn ${activeCategory === opt.id ? 'active':''}`}>{opt.label}</button>
+
+                        )))}
+                    </div>
+                    <div className='box-row'>
+                        {categories.slice(5,7).map((opt => (
                             <button key={opt.id} className={`box-btn ${activeCategory === opt.id ? 'active':''}`}>{opt.label}</button>
 
                         )))}
