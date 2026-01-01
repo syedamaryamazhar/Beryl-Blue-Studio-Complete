@@ -5,7 +5,7 @@ import Footer from "/src/components/footer";
 import "./Cart.css";
 
 const Cart = () =>{
-    const [Cart , SetCart] =useState([]);
+    const [cart , SetCart] =useState([]);
     const navigate =useNavigate();
 
     useEffect(() => {
@@ -46,7 +46,7 @@ const Cart = () =>{
         SetCart(updatedCart);
         };
 
-        const subtotal =cart .reduce(
+        const subtotal =cart.reduce(
             (sum,item) => sum + item.price * item.qty,
             0
         ); 

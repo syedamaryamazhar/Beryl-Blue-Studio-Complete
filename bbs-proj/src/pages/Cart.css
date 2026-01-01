@@ -148,6 +148,8 @@ main.cart-section {
     cursor: pointer;
 }
 
+
+
 .box input{
     width: 30px;
     align-items: center;
@@ -181,6 +183,19 @@ main.cart-section {
 }
 
 .note button{
+    background-color:  #1A4359;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.checkout:hover{
+    background-color: #A7C3C6;
+}
+
+.checkout{
     background-color:  #1A4359;
     color: white;
     border: none;
