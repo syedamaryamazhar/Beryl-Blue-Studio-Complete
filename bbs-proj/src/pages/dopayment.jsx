@@ -24,7 +24,7 @@ const DoPayment = () => {
             <Header />
             <main className="container">
                 <section className="customize-section">
-                    <ProgressBar currentStep={3} />
+                    <ProressBar currentStep={3} />
 
                     <div className="content-grid">
                         <div className="payment-form">

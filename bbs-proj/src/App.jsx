@@ -13,14 +13,14 @@ import Cart from './pages/Cart'
 import CustomizePg1 from './pages/customizepg1';
 import CustomizePg2 from './pages/customizepg2';
 import CustomizePg3 from './pages/customizepg3';
-
+import DoPayment from './pages/dopayment';
 
 function App() {
   // const [current, setCurrent] = React.useState(1); 
 
   return (
     <div>
-      <CustomizePg3 />
+      <DoPayment/>
     </div>
   );
 }
