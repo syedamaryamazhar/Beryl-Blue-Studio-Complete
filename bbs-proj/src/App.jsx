@@ -10,15 +10,15 @@ import Productspage from './pages/Productspage'
 import ProductDetail from './pages/Productdetail'
 import About from './pages/About'
 import Cart from './pages/Cart'
-import ProgressBar from "./components/progressbar";
+import CustomizePg1 from './pages/customizepg1';
 
 
 function App() {
-  const [current, setCurrent] = React.useState(1); 
+  // const [current, setCurrent] = React.useState(1); 
 
   return (
     <div>
-      <ProgressBar currentStep={current} />
+      <CustomizePg1 />
     </div>
   );
 }

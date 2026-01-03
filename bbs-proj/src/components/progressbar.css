@@ -19,9 +19,9 @@
         .progress-bar::before {
             content: '';
             position: absolute;
-            width: 980px;
+            width: 920px;
             height: 1px;
-            margin-left: 115px;
+            margin-left: 110px;
             background-color: #999;
             top: 18%;
         }
