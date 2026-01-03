@@ -30,7 +30,7 @@ function App() {
         <Route path="/dopayment" element={<DoPayment />} />
         <Route path="/orderconfirmation" element={<OrderConfirm />} />
         <Route path="/" element={<Home />}/>
-        {/* <Route path="/Productspage" element={<Productspage />}/> */}
+        <Route path="/Productspage" element={<Productspage />}/>
         <Route path="/Productdetail" element={<ProductDetail />}/>
       </Routes>
       <Footer />

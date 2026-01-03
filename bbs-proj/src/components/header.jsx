@@ -12,7 +12,7 @@ const Header =() => {
                     <Link to="/"><img className="logoimg" src="/images/logo.svg"/></Link>
 
                     <p className="top-rightnavicon">
-                        <Link to="/">
+                        <Link to="/Cart">
                             <img src="/images/Bag icon.svg" width="30" height="30"/>
                         </Link>
                     </p>
@@ -22,8 +22,8 @@ const Header =() => {
             <div className="bottom-header">
                 <nav className="nav-links">
                     <Link to="/">Home</Link>
-                    <Link to="/">About</Link>
-                    <Link to="/">ShopAll</Link>
+                    <Link to="/About">About</Link>
+                    <Link to="/Productspage">ShopAll</Link>
                     <Link to="/">Albums</Link>
                     <Link to="/">Greeting Cards</Link>
                     <Link to="/">Bookmarks</Link>

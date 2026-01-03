@@ -6,9 +6,9 @@ const Footer = () => {
         <footer className="footer">
         <div className="container">
             <div className="footer-nav">
-                <Link to="/" target="_blank">Contact</Link>
-                <Link to="/" target="_blank">About</Link>
-                <Link to="/" target="_blank">Shop</Link>
+                <Link to="/Contact" target="_blank">Contact</Link>
+                <Link to="/About" target="_blank">About</Link>
+                <Link to="/Productspage" target="_blank">Shop</Link>
                 <Link to="https://www.instagram.com/berylbluestudio/" target="_blank">
                     <img src="/images/instagram icon.svg" width="20" height="20"/>
                     Instagram
