@@ -34,7 +34,7 @@ const CustomizePg1 = () => {
                     <h2 className="section-title">Customize your Paper Art</h2>
                     <p className="customize-subtitle">Choose your item, select your preferences, and we'll craft it just for you.</p>
 
-                    <ProressBar />
+                    <ProressBar currentStep={0}/>
 
                     <div className="typesoforder">Types of Custom Order</div>
 

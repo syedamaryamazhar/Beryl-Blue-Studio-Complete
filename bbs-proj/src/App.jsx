@@ -11,6 +11,7 @@ import ProductDetail from './pages/Productdetail'
 import About from './pages/About'
 import Cart from './pages/Cart'
 import CustomizePg1 from './pages/customizepg1';
+import CustomizePg2 from './pages/customizepg2';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <div>
-      <CustomizePg1 />
+      <CustomizePg2 />
     </div>
   );
 }
