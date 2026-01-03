@@ -24,6 +24,13 @@ body{
     padding:0 auto;
 }
 
+main {
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
 
 
 .progress{
@@ -76,7 +83,7 @@ body{
             padding: 25px;
             text-align: left;
             max-width: 800px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
         }
 
         .delivery-info h3{
@@ -129,22 +136,24 @@ body{
          cursor: pointer;
         }
 
-        .checkout{
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+       .check {
+        display: flex;
+        justify-content: center;
+         gap: 40px;
+        align-items: flex-start;
+        margin-bottom: 60px;
+        background-color: transparent;
+}
 
-        .payment , .summary {
-            background-color: #F7EAEA;
-            padding: 25px;
-            border-radius: 10px;
-            flex: 1;
-            max-width: 358px;
-            text-align: left;
-        }
+
+        .payment,.summary {
+        background-color: #F7EAEA;
+        padding: 25px;
+       border-radius: 12px;
+        width: 350px;
+        text-align: left;
+}
+
 
         .payment h4 , .summary h4{
             font-family: 'Playfair Display';

@@ -38,7 +38,7 @@ const handleChange =(e) => {
 const placeOrder = () => {
     const {name , phone , email , adreess} =formData;
 
-    if(!name || !phone || !email || !address || !payment){
+    if(!name || !phone || !email || !adreess || !payment){
         alert("Please fill all fields and select a payment method.");
         return;
     }
@@ -113,7 +113,7 @@ return(
             </form>
         </section>
 
-        <div className="checkout">
+        <div className="check">
             <div className="payment">
                 <h4>Payment Options</h4>
                 <label>
