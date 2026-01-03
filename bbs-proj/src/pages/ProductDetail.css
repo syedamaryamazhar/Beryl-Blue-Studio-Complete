@@ -45,7 +45,14 @@
             font-size: 16px;
             color: #666;
             margin-bottom: 5px;
+            text-align: left;
         }
+        .price-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
         
         .product-price {
             font-family: var(--font-playfairdisplay);
@@ -152,7 +159,7 @@
     .expand-icon.open {
             transform: rotate(180deg);
     }
-        .expandable-content {
+        .expandable-contentt {
             font-size: 13px;
             color: #666;
             padding-top: 10px;

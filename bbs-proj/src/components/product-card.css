@@ -25,10 +25,12 @@
 .product-title{
     margin: 0;
     font-size: 15px;
+    color: black;
 }
         
 .price {
     font-size: 15px;
+    text-align: left;
     margin: 5px;
     color: black;
 }

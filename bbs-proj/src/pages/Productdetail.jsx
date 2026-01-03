@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useParams} from 'react-router-dom';
-import './ProductDetail.css'
+import './Productdetail.css'
 import ProductCard from "/src/components/product-card";
 import { useNavigate } from 'react-router-dom';
 
@@ -95,7 +95,7 @@ const ProductDetail = () => {
                         <p className='product-category'>{product.category}</p>
 
                         <div className='price-row'>
-                            <p className='produt-price'>Rs {product.price}</p>
+                            <p className='product-price'>Rs {product.price}</p>
                             <span className='sale-tag'>ON SALE</span>
                         </div>
                         {/* Quantity  */}
