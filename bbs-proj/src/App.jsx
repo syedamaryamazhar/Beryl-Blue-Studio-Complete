@@ -17,6 +17,7 @@ import DoPayment from './pages/dopayment';
 import OrderConfirm from './pages/orderconfirmation';
 import Checkout from './pages/Checkout';
 import Contact from './pages/Contact';
+import Thankyou from './pages/Thankyou';
 import Header from "./components/header";
 import Footer from "./components/footer"
 
@@ -40,7 +41,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer /> */}
-      <Checkout />
+      <Thankyou />
     
     </div>
   );
