@@ -2,11 +2,10 @@ import React, {useState} from 'react';
 import { Link, BrowserRouter, Route, Routes } from 'react-router-dom';
 import './Productspage.css'
 import ProductCard from "/src/components/product-card";
-import Header from "/src/components/header";
-import Footer from "/src/components/footer";
 
 
 const ProductsPage = () => {
+    // const navigate = useNavigate();
     //tracking active category bar
     const [activeCategory, setActiveCategory] = useState('all');
 
@@ -44,8 +43,7 @@ const ProductsPage = () => {
     
     return(
         <div className='productspage'>
-            <Header />
-            
+        
             <section className='container'>
                 <h2 className='section-title'>Shop by Category</h2>
                 <div className='box-groups'>
@@ -86,7 +84,6 @@ const ProductsPage = () => {
                 <Link to="/" class="page-number">4</Link>
             </section>
 
-            <Footer />
         </div>
     );
 };

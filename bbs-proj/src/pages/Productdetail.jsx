@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useParams} from 'react-router-dom';
-import './Productdetail.css'
+import './ProductDetail.css'
 import ProductCard from "/src/components/product-card";
-import Header from "/src/components/header";
-import Footer from "/src/components/footer";
+import { useNavigate } from 'react-router-dom';
 
 const ProductDetail = () => {
+    const navigate = useNavigate();
+
     const {id} = useParams();
     const [quantity, setQuantity] = useState(1);
     const [mainImage, setMainImage] = useState("");
@@ -72,7 +73,7 @@ const ProductDetail = () => {
 
     return(
         <div className='productsdetail'>
-            <Header />
+          
             <main className='container'>
                 <section className='product-detail-grid'>
                     {/* Images section */}
@@ -114,7 +115,7 @@ const ProductDetail = () => {
                             {added ? 'Added to Cart!' : 'Add to Cart'}
                         </button>
 
-                        <Link to="/"><button className='btn-customize-product'> Customize this Product</button></Link>
+                        <button className='btn-customize-product' onClick={() =>{ navigate('/customizepg1')}}> Customize this Product</button>
 
                         {/* Exand Details  */}
                         <div className='expandable-section'>
@@ -179,7 +180,7 @@ const ProductDetail = () => {
                         </div>
                 </section>
             </main>
-            <Footer />
+
         </div>
     );
 

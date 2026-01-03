@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import ProressBar from "/src/components/progressbar";
-import Header from "/src/components/header";
-import Footer from "/src/components/footer";
+import { useNavigate } from "react-router-dom";
 import './customizepg3.css'
 
 const CustomizePg3 = () => {
+    const navigate = useNavigate();
     const [details, setDetails] = useState({
         name: '',
         phone: '',
@@ -18,13 +18,8 @@ const CustomizePg3 = () => {
         setDetails(prev => ({...prev, [name]:type === 'checkbox' ? checked:value}));
     };
 
-    const handlePaymentProceed = () => {
-        console.log("Navigate to payment page");
-    };
-
     return(
         <div className="customizepg2">
-            <Header />
             
             <main className="container">
                 <section className="customize-section">
@@ -89,14 +84,13 @@ const CustomizePg3 = () => {
                             <p className="total">Total Amount<span>Rs 3500</span></p>
                             <p className="estimated-date">Estimated delivery date 5-8 Jan</p>
 
-                            <button className="btn-next-step" onClick={handlePaymentProceed}>Proceed to payment</button>
+                            <button className="btn-next-step" onClick={() =>{ navigate('/dopayment')}}>Proceed to payment</button>
                             
                             <p className="email-confirmation-text">You will receive an email after placing order</p>
                         </div>
                     </div>
                 </section>
             </main>
-            <Footer />
         </div>
                     
     );

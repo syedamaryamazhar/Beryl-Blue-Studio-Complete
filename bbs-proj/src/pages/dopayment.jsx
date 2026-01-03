@@ -1,11 +1,11 @@
 import React, {useState, useTransition} from "react";
 import ProressBar from "/src/components/progressbar";
-import Header from "/src/components/header";
-import Footer from "/src/components/footer";
+import { useNavigate } from "react-router-dom";
 import './dopayment.css'
 
 const DoPayment = () => {
-    const [paymentDetails, stePaymentDetails] = useState({
+    const navigate = useNavigate();
+    const [paymentDetails, setPaymentDetails] = useState({
         accountName: '',
         accountNumber: ''
     });
@@ -15,13 +15,10 @@ const DoPayment = () => {
         setDetails(prev => ({...prev, [name]:value}));
     };
 
-    const handleConfirmPayment = () => {
-        console.log("Navigate to order onformed page");
-    };
+    
 
     return(
         <div className="dopaymentpg">
-            <Header />
             <main className="container">
                 <section className="customize-section">
                     <ProressBar currentStep={3} />
@@ -37,7 +34,7 @@ const DoPayment = () => {
                                 <label htmlFor="accountNumber">Account Number</label>
                                 <input type="tel" id="accountNumber" name="accountNumber" placeholder="XXXX XXXX XXXX XXXX" value={paymentDetails.accountNumber} onChange={handleChange}/>
 
-                                <button className="btn-next-step" onClick={handleChange}>Confirm Payment</button>
+                                <button className="btn-next-step" onClick={() =>{ navigate('/orderconfirmation')}}>Confirm Payment</button>
                                 <p className="email-confirmation-text">You will receive an email after confirming payment</p>
                             </form>
                         </div>
@@ -53,7 +50,6 @@ const DoPayment = () => {
                     </div>
                 </section>
             </main>
-            <Footer />
         </div>
     );
 };

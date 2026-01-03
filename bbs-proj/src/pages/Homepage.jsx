@@ -1,11 +1,11 @@
 import React from "react";
-import {Link, BrowserRouter, Routes, Route}  from 'react-router-dom';
+import {useNavigate, BrowserRouter, Routes, Route}  from 'react-router-dom';
 import ProductCard from "/src/components/product-card";
-import Header from "/src/components/header";
-import Footer from "/src/components/footer";
 import './Homepage.css'
 
 const Home = () => {
+    const navigate = useNavigate();
+
     const featuredProducts = [
         { id: 1, title:"Torquise Eid Card", price: 300, image: "/images/p1.jpeg"},
         { id: 2, title: "Mushroom Tags Pack of 7", price: 210, image: "/images/p2.jpeg" },
@@ -25,12 +25,11 @@ const Home = () => {
 
     return(
         <div className="homepage">
-            <Header />
             <section className="hero-section">
                 <div className="hero-image">
                     <img src="/images/herobanner.png" className="herobanner"/>
                     <div className="hero-content">
-                        <Link to="/" className="btn-customize">Customize Now</Link>
+                        <button className="btn-customize" onClick={() =>{ navigate('/customizepg1')}}>Customize Now</button>
                     </div>
                 </div>
             </section>
@@ -63,7 +62,6 @@ const Home = () => {
                     ))}
                 </div>
             </section>
-            <Footer />
         </div>
     );
 };

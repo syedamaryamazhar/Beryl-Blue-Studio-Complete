@@ -88,6 +88,7 @@ form input[type="text"] {
     font-family: var(--font-playfairdisplay);
     font-size: 19px;
     font-weight: 700;
+    color: black;
     margin-top: 0;
     margin-bottom: 20px;
 }

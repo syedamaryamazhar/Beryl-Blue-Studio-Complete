@@ -72,6 +72,6 @@
 }
 
 .btn-proceed:hover {
-    background-color: var(--Seondary);
+    background-color: var(--Secondary);
     color: var(--Primary);
 }

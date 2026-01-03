@@ -1,21 +1,17 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import ProressBar from "/src/components/progressbar";
-import Header from "/src/components/header";
-import Footer from "/src/components/footer";
 import './customizepg1.css'
 
+
 const CustomizePg1 = () => {
+    const navigate = useNavigate();
     const [customType, setCustomType] = useState('greeting_card');
 
     const handleTypeChange = (event) => {
         setCustomType(event.target.value);
     };
 
-    const handleProceed = () => {
-        console.log("Proceeding with type:", customType);
-        // In a real app, you would use navigation here:
-        // window.location.href = "customizepg2.html";
-    };
     const orderOptions = [
         {value: 'greeting card', label: 'Greeting Card'},
         {value: 'packaging', label: 'Packaging'},
@@ -27,7 +23,6 @@ const CustomizePg1 = () => {
     ]
     return(
         <div className="customizepg1">
-            <Header />
             
             <main className="container">
                 <section className="customize-section">
@@ -48,11 +43,12 @@ const CustomizePg1 = () => {
                             </label>
                         ))}
                     </div>
+                    
 
-                    <button className="btn-proceed" onClick={handleProceed}>Proceed to Customize</button>
+                    <button className="btn-proceed" onClick={() =>{ navigate('/customizepg2')}}>Proceed to Customize</button>
+                       
                 </section>
             </main>
-            <Footer />
         </div>
     );
 };

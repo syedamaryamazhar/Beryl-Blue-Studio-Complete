@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import ProressBar from "/src/components/progressbar";
-import Header from "/src/components/header";
-import Footer from "/src/components/footer";
+import { useNavigate } from "react-router-dom";
 import './customizepg2.css'
 
 const CustomizePg2 = () => {
+    const navigate = useNavigate();
     const [formData, steFormData] = useState({
         occasion:'',
         colorTheme: '',
@@ -19,12 +19,8 @@ const CustomizePg2 = () => {
         steFormData(prev => ({...prev, [name]:value}));
     };
 
-    const handleNextStep = () => {
-        console.log("moving");
-    };
     return(
         <div className="customizepg2">
-            <Header />
             
             <main className="container">
                 <section className="customize-section">
@@ -36,7 +32,7 @@ const CustomizePg2 = () => {
                     <div className="content-grid">
                         <div className="form-box">
                             <form>
-                                <lable htmlFor="occasion">Occasion</lable>
+                                <label htmlFor="occasion">Occasion</label>
                                 <select id="occasion" name="occasion" value={formData.occasion} onChange={handleChange}>Select an Occasion
                                     <option value={""}>Select an Occasion</option>
                                     <option value={"birthday"}>Birthday</option>
@@ -48,7 +44,7 @@ const CustomizePg2 = () => {
                                     <option value={"other"}>Other</option>
                                 </select>
 
-                                <lable htmlFor="colorTheme">Color Theme</lable>
+                                <label htmlFor="colorTheme">Color Theme</label>
                                 <input type="text" id="colorTheme" name="colorTheme" placeholder="E.g Pastel colors" value={formData.colorTheme} onChange={handleChange}/>
                                 
                                 <label htmlFor="size">Size</label>
@@ -66,7 +62,7 @@ const CustomizePg2 = () => {
                                 <input type="text" id="msgFront" name="msgFront" placeholder="E.g Happy Birthday Sarah!" value={formData.msgFront} onChange={handleChange}/>
 
                                 <label htmlFor="msgInside">Message inside (optional)</label>
-                                <input type="text" id="msgFront" name="msgFront" placeholder="E.g have a good day!" value={formData.msgInside} onChange={handleChange}/>
+                                <input type="text" id="msgInside" name="msgFront" placeholder="E.g have a good day!" value={formData.msgInside} onChange={handleChange}/>
 
                                 <label>Include Envelope</label>
                                 <div className="radio-group">
@@ -101,12 +97,11 @@ const CustomizePg2 = () => {
                             <hr/>
                             <p className="total">Total Amount<span>Rs 3500</span></p>
 
-                            <button className="btn-next-step" onClick={handleNextStep}>Proceed To Next Step</button>
+                            <button className="btn-next-step" onClick={() =>{ navigate('/customizepg3')}}>Proceed To Next Step</button>
                         </div>
                     </div>
                 </section>
             </main>
-            <Footer />
         </div>
     );
 };
