@@ -1,0 +1,57 @@
+/* PROGRESS BAR */
+        .progress-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0 5%;
+            margin-bottom: 70px;
+        }
+     
+        /* PROGRESS BAR STEPS*/
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            width: 100vw;
+            /* position: relative; */
+        }
+        
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            width: 980px;
+            height: 1px;
+            margin-left: 115px;
+            background-color: #999;
+            top: 18%;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 20%; 
+            position: relative;
+            font-family: var(--font-poppins);
+            font-size: 14px;
+            color: black;
+            text-align: center;
+        }
+
+        .step-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: var(--Basecolor);
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        .step.active .step-dot {
+            background-color: var(--Primary);
+            border-color: var(--Primary);
+        }
+
+        .step.active {
+            color: var(--Primary);
+        }

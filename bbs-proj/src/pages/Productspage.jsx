@@ -5,6 +5,7 @@ import ProductCard from "/src/components/product-card";
 import Header from "/src/components/header";
 import Footer from "/src/components/footer";
 
+
 const ProductsPage = () => {
     //tracking active category bar
     const [activeCategory, setActiveCategory] = useState('all');
@@ -40,10 +41,11 @@ const ProductsPage = () => {
     ];
 
     const filteredProducts = activeCategory === 'all'? featuredProducts:featuredProducts.filter(p => p.category === activeCategory);
-
+    
     return(
         <div className='productspage'>
             <Header />
+            
             <section className='container'>
                 <h2 className='section-title'>Shop by Category</h2>
                 <div className='box-groups'>
