@@ -75,6 +75,7 @@ const ProductDetail = () => {
             <Header />
             <main className='container'>
                 <section className='product-detail-grid'>
+                    {/* Images section */}
                     <div className='detail-left'>
                         <div className='product-images'>
                             <div className='small-image-gallery'>
@@ -87,7 +88,7 @@ const ProductDetail = () => {
                             <img src={`/images/${mainImage}`} className='main-image'/>
                         </div>
                     </div>
-
+                    {/* Name price  */}
                     <div className='detail-right'>
                         <h2 className='product-name'>{product.title}</h2>
                         <p className='product-category'>{product.category}</p>
@@ -96,7 +97,7 @@ const ProductDetail = () => {
                             <p className='produt-price'>Rs {product.price}</p>
                             <span className='sale-tag'>ON SALE</span>
                         </div>
-
+                        {/* Quantity  */}
                         <div className='qty-row'>
                             <p>Quantity</p>
                             <div className='qty-selector'>
@@ -106,6 +107,7 @@ const ProductDetail = () => {
                             </div>
                         </div>
 
+                            {/* Buttons  */}
                         <button className={`btn-add-to-cart${added ? 'success': ''}`}
                         onClick={handleAddToCart}
                         disabled = {added}>
@@ -113,7 +115,8 @@ const ProductDetail = () => {
                         </button>
 
                         <Link to="/"><button className='btn-customize-product'> Customize this Product</button></Link>
-                    
+
+                        {/* Exand Details  */}
                         <div className='expandable-section'>
                             <div>
                                 <div className='expand-title' onClick={() => toggleSection('details')}>

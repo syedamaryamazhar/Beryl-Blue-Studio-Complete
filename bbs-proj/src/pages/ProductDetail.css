@@ -81,7 +81,7 @@
             border:none;
             border-radius: 6px;
             overflow: hidden;
-            width: 120px;
+            /* width: 110px; */
             font-size: 16px;
             background-color: var(--Basecolor);
         }
@@ -93,7 +93,7 @@
         .qty-selector button {
             background-color: var(--Basecolor);
             border: none;
-            padding: 5px 8px;
+            padding: 5px 10px;
             cursor: pointer;
             transition: background-color 0.2s;
         }
