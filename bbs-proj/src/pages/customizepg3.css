@@ -3,16 +3,6 @@
     padding-bottom: 60px;
 }
 
-
-/* PROGRESS BAR */
-.progress-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 0 5%;
-    margin-bottom: 70px;
-}
 /* MAIN SECTION */
 .content-grid {
     display: grid;

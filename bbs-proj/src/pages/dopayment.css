@@ -3,15 +3,7 @@
     padding-bottom: 60px;
 }
 
-.progress-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 0 5%;
-    margin-bottom: 70px;
-}
-    .content-grid {
+.content-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
@@ -68,7 +60,7 @@ form input[type="tel"] {
     margin-top: 10px;
 }
 
-.btn-next-step:hover { background-color: var(--Seondary);
+.btn-next-step:hover { background-color: var(--Secondary);
     color: var(--Primary);
 }
 

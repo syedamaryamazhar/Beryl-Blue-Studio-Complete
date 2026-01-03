@@ -14,13 +14,13 @@ import CustomizePg1 from './pages/customizepg1';
 import CustomizePg2 from './pages/customizepg2';
 import CustomizePg3 from './pages/customizepg3';
 import DoPayment from './pages/dopayment';
+import OrderConfirm from './pages/orderconformation';
 
 function App() {
-  // const [current, setCurrent] = React.useState(1); 
 
   return (
     <div>
-      <DoPayment/>
+      <OrderConfirm/>
     </div>
   );
 }
