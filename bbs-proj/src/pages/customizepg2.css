@@ -118,6 +118,6 @@ font-size: 18px;
     margin-top: 20px;
 }
 
-.btn-next-step:hover { background-color: var(--Seondary); 
+.btn-next-step:hover { background-color: var(--Secondary); 
     color: var(--Primary);
 }
