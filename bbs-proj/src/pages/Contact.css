@@ -1,0 +1,158 @@
+
+
+main {
+    width:85%;
+    margin: 0 auto;
+    text-align: center;
+}   
+
+.intro h2{
+    font-family: 'Playfair Display';
+    font-weight: 600;
+    font-size: 26px;
+    margin-top: 60px;
+    color: black;
+}
+
+.intro p{
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.contact-form{
+    background-color: #F7EAEA;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 750px;
+    margin: 0 auto 60px;
+    text-align: left;
+}
+
+.form-intro{
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+form label{
+    display: block;
+    margin: 10px 0 4px;
+    font-size: 14px;
+}
+
+form input , form select ,
+form textarea{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    background-color: transparent;
+}
+
+form textarea{
+    resize: none;
+}
+
+button{
+    display: block;
+    margin: 25px auto 0;
+    width: 200px;
+    background-color: #1A4359;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #A7C3C6;
+}
+
+.contact-details{
+    text-align: left;
+    max-width: 750px;
+    max-width: 0 auto 80px;
+}
+
+.contact-details h3{
+    font-family: 'Playfair Display';
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.contact-details p{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    margin: 6px 0;
+}
+
+
+
+@media (max-width: 1024px){
+
+    main{
+        width: 90%;
+    }
+
+    .contact-form , .contact-details{
+        max-width: 90%;
+    }
+}  
+
+@media(max-width:768px){
+
+
+    main{
+        width: 92%;
+    }
+
+    .intro h2{
+        font-size: 22px;
+    }
+
+    .intro p{
+        font-size: 14px;
+    }
+
+    .contact-form{
+        padding: 20px;
+    }
+
+    button{
+        width: 100%;
+    }
+
+    .contact-details{
+        margin-bottom: 60px;
+    }
+
+}
+
+@media(max-width:480px){
+    .intro h2{
+        font-size: 18px;
+    }
+
+    .intro p{
+        font-size: 13px;
+    }
+
+    form label{
+        font-size: 13px;
+    }
+
+    form input ,form select , form textarea{
+        font-size: 13px;
+    }
+
+    .contact-details p{
+        font-size: 13px;
+    }
+
+
+}

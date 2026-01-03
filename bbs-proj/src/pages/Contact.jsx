@@ -12,6 +12,14 @@ const Contact = () => {
 
     });
 
+      const handleChange = (e) => {
+        setFormData({
+          ...formData,
+           [e.target.name]: e.target.value,
+        });
+  };
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -54,7 +62,7 @@ const Contact = () => {
                         type="text"
                         name="name"
                         value={formData.name}
-                        onCharge={handleChange}
+                        onChange={handleChange}
                         />
 
                         <label>Email</label>
@@ -62,7 +70,7 @@ const Contact = () => {
                         type="text"
                         name="email"
                         value={formData.email}
-                        onCharge={handleChange}
+                        onChange={handleChange}
                         />
 
                         <label>Subject</label>
@@ -70,7 +78,7 @@ const Contact = () => {
                         type="text"
                         name="subject"
                         value={formData.subject}
-                        onCharge={handleChange}
+                        onChange={handleChange}
                         />
 
                         <label>Subject</label>
