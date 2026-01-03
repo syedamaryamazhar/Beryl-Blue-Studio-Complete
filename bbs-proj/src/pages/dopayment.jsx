@@ -39,17 +39,16 @@ const DoPayment = () => {
 
                                 <button className="btn-next-step" onClick={handleChange}>Confirm Payment</button>
                                 <p className="email-confirmation-text">You will receive an email after confirming payment</p>
-
-                                <div className="total-summary">
-                                    <h3 className="summary-title">Order summary</h3>
-                                    
-                                    <p className="p">Subtotal <span>Rs 3300</span></p>
-                                    <p className="p">Discount <span>-Rs 100</span></p>
-                                    <p className="p">Shipping Fee<span>Rs 300</span></p>
-                                    <hr />
-                                    <p className="total">Total Amount<span>Rs 3500</span></p>
-                                </div>
                             </form>
+                        </div>
+                        <div className="total-summary">
+                            <h3 className="summary-title">Order summary</h3>
+                            
+                            <p className="p">Subtotal <span>Rs 3300</span></p>
+                            <p className="p">Discount <span>-Rs 100</span></p>
+                            <p className="p">Shipping Fee<span>Rs 300</span></p>
+                            <hr />
+                            <p className="total">Total Amount<span>Rs 3500</span></p>
                         </div>
                     </div>
                 </section>
