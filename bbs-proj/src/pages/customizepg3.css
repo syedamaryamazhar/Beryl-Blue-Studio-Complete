@@ -153,7 +153,7 @@
             margin-top: 0px;
         }
 
-        .btn-next-step:hover { background-color: var(--Seondary);
+        .btn-next-step:hover { background-color: var(--Secondary);
             color: var(--Primary);
         }
 
