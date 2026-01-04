@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link, BrowserRouter, Route, Routes } from 'react-router-dom';
 import './Productspage.css'
 import ProductCard from "/src/components/product-card";
@@ -7,6 +7,8 @@ import ProductCard from "/src/components/product-card";
 const ProductsPage = () => {
     //tracking active category bar
     const [activeCategory, setActiveCategory] = useState('all');
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const categories = [
         {id: 'all', label: 'All'},
@@ -19,30 +21,31 @@ const ProductsPage = () => {
         {id: 'props', label: 'Props'},
     ];
 
-    const featuredProducts = [
-        { id: 1, title:"Torquise Eid Card", price: 300, image: "/images/p1.jpeg", category: "cards"},
-        { id: 2, title: "Mushroom Tags Pack of 7", price: 210, image: "/images/p2.jpeg", category: "tags"},
-        { id: 3, title: "Chemistry Theme Birthday Card", price: 300, image: "/images/p3.jpeg", category: "cards"},
-        { id: 4, title: "Purple Eid Card", price: 300, image: "/images/p4.jpeg", category: "cards" },
-        { id: 5, title: "Mini Yellow Spring Album", price: 600, image: "/images/p5.jpeg", category: "albums" },
-        { id: 6, title: "Flowery Bookmarks", price: 260, image: "/images/bookmark.jpeg", category: "bookmarks" },
-        { id: 7, title: "Cherry Blossoms Card", price: 300, image: "/images/p7.jpeg", category: "cards" },
-        { id: 8, title: "Lavender Greeting Card", price: 300, image: "/images/p8.jpeg", category: "cards" },
-        { id: 9, title:"Torquise Eid Card", price: 300, image: "/images/p1.jpeg", category: "cards"},
-        { id: 10, title: "Mushroom Tags Pack of 7", price: 210, image: "/images/p2.jpeg", category: "tags" },
-        { id: 11, title: "Chemistry Theme Birthday Card", price: 300, image: "/images/p3.jpeg", category: "cards" },
-        { id: 12, title: "Purple Eid Card", price: 300, image: "/images/p4.jpeg", category: "cards" },
-        { id: 13, title: "Mini Yellow Spring Album", price: 600, image: "/images/p5.jpeg", category: "albums" },
-        { id: 14, title: "Flowery Bookmarks", price: 260, image: "/images/bookmark.jpeg", category: "bookmarks" },
-        { id: 15, title: "Cherry Blossoms Card", price: 300, image: "/images/p7.jpeg", category: "cards" },
-        { id: 16, title: "Lavender Greeting Card", price: 300, image: "/images/p8.jpeg", category: "cards" },
-    ];
+    useEffect(() => {
+        fetch('http://localhost:5000/api/products')
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error('Failed to fetch products');
+                }
+                return response.json();
+            })
+            .then(data => {
+                setProducts(data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error fetching products:', error);
+                setLoading(false);
+            });
+    }, []);
 
-    const filteredProducts = activeCategory === 'all'? featuredProducts:featuredProducts.filter(p => p.category === activeCategory);
+    const filteredProducts = activeCategory === 'all'? products:products.filter(p => p.category === activeCategory);
     
-    const handleCategoryClick = (categoryid) => {
-        setActiveCategory(categoryid);
-    };
+    if(loading){
+        return(
+            <div></div>
+        );
+    }
 
     return(
         <div className='productspage'>
@@ -53,14 +56,14 @@ const ProductsPage = () => {
                     <div className='box-row'>
                         {categories.slice(0,5).map((opt => (
                             <button key={opt.id} className={`box-btn ${activeCategory === opt.id ? 'active':''}`} 
-                            onClick={() => handleCategoryClick(opt.id)}>{opt.label}</button>
+                            onClick={() => setActiveCategory(opt.id)}>{opt.label}</button>
 
                         )))}
                     </div>
                     <div className='box-row'>
                         {categories.slice(5,7).map((opt => (
                             <button key={opt.id} className={`box-btn ${activeCategory === opt.id ? 'active':''}`} 
-                            onClick={() => handleCategoryClick(opt.id)}>{opt.label}</button>
+                            onClick={() => setActiveCategory(opt.id)}>{opt.label}</button>
 
                         )))}
                     </div>

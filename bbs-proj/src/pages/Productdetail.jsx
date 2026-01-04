@@ -6,49 +6,52 @@ import { useNavigate } from 'react-router-dom';
 
 const ProductDetail = () => {
     const navigate = useNavigate();
-
     const {id} = useParams();
+
+    const [product, setProduct] = useState(null);
+    const [featuredProducts, setFeaturedProducts] = useState([]);
     const [quantity, setQuantity] = useState(1);
     const [mainImage, setMainImage] = useState("");
     const [added, setAdded] = useState(false);
     const [openSection, setOpenSection] = useState('details');
-
-    const featuredProducts = [
-        { id: 1, title:"Torquise Eid Card", price: 300, image: "/images/p1.jpeg"},
-        { id: 2, title: "Mushroom Tags Pack of 7", price: 210, image: "/images/p2.jpeg" },
-        { id: 3, title: "Chemistry Theme Birthday Card", price: 300, image: "/images/p3.jpeg" },
-        { id: 4, title: "Purple Eid Card", price: 300, image: "/images/p4.jpeg" },
-        { id: 5, title: "Mini Yellow Spring Album", price: 600, image: "/images/p5.jpeg" },
-        { id: 6, title: "Watercolor strips Birthday Card", price: 260, image: "/images/bookmark.jpeg" },
-        { id: 7, title: "Cherry Blossoms Card", price: 300, image: "/images/p7.jpeg" },
-        { id: 8, title: "Lavender Greeting Card", price: 300, image: "/images/p8.jpeg" },
-    ];
-
-    const productsData ={
-        1: { title: "Torquise Eid Card", price: "300", image: "p1.jpeg",smimage: "eidtorquise2.jpeg",smimage2: "p1.jpeg", category: "Greeting Card", type: "Physical", size: "6 x 12", material: "Hard chart" },
-        2: { title: "Mushroom Tags Pack of 7", price: "210", image: "p2.jpeg",smimage: "tag1.jpeg",smimage2: "tag2.jpeg", category: "Tags", type: "Physical", size: "3 x 4", material: "Hard chart" },
-        3: { title: "Chemistry Theme Birthday Card", price: "300", image: "p3.jpeg",smimage: "p3.jpeg",smimage2: "p3.jpeg", category: "Greeting Card", type: "Physical", size: "6 x 12", material: "Hard chart" },
-        4: { title: "Purple Eid Card", price: "300", image: "p4.jpeg",smimage: "p4.jpeg",smimage2: "p4.jpeg", category: "Greeting Card", type: "Physical", size: "6 x 12", material: "Hard chart" },
-        5: { title: "Mini Yellow Spring Album", price: "600", image: "p5.jpeg",smimage: "al1.jpeg",smimage2: "al2.jpeg", category: "Album", type: "Physical", size: "4 x 6", material: "Hard chart" },
-        6: { title: "Flowers bookmarks Set of 3", price: "250", image: "bookmark.jpeg",smimage: "bookmark1.jpeg",smimage2: "bookmark2.jpeg", category: "Bookmark", type: "Physical", size: "2 x 6", material: "Hard chart" },
-        7: { title: "Cherry Blossoms Card", price: "300", image: "p7.jpeg",smimage: "cherry1.jpeg",smimage2: "cherry2.jpeg", category: "Greeting Card", type: "Physical", size: "6 x 12", material: "Hard chart" },
-        8: { title: "Lavender Greeting Card", price: "300", image: "p8.jpeg",smimage: "p8.jpeg",smimage2: "p8.jpeg", category: "Greeting Card", type: "Physical", size: "6 x 12", material: "Hard chart" }
-    };
-
-    const product = productsData[id] || productsData[1];
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setMainImage(product.image);
+        fetch(`http://localhost:5000/api/products/${id}`)
+            .then(response => {
+                if(!response.ok) throw new Error('Product not found');
+                return(response.json());
+            })
+            .then(data => {
+                setProduct(data);
+                setMainImage(data.image);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error fetching product:', error);
+                setLoading(false);
+            });
+        fetch('http://localhost:5000/api/products')
+            .then(response => response.json())
+            .then(data => {
+                const related = data.filter(p => p.id !== parseInt(id)).slice(0,8);
+                setFeaturedProducts(related);
+            })
+            .catch(error => console.error('Error fetching products', error));
+
         setAdded(false);
         setQuantity(1);
         window.scrollTo(0,0);
-    }, [id, product.image]);
+    }, [id]);
+
 
     const toggleSection = (section) => {
         setOpenSection(openSection === section ? '' : section);
     };
     
     const handleAddToCart = () => {
+        if (!product) return;
+
         const cartItem = {
             id: product.id,
             title: product.title,
@@ -69,6 +72,14 @@ const ProductDetail = () => {
         localStorage.setItem("cart", JSON.stringify(existingCart));
         setAdded(true);
         setTimeout(() => setAdded(false), 2000);
+    };
+
+    if (loading) {
+        return <div className="container"><p style={{padding: '100px', textAlign: 'center'}}>Loading product details...</p></div>;
+    }
+
+    if (!product) {
+        return <div className="container"><p style={{padding: '100px', textAlign: 'center'}}>Product not found.</p></div>;
     }
 
     return(
@@ -80,11 +91,11 @@ const ProductDetail = () => {
                     <div className='detail-left'>
                         <div className='product-images'>
                             <div className='small-image-gallery'>
-                                <img src={`/images/${product.smimage}`}  className='small-image1'
-                                onClick={() => setMainImage(product.smimage)}/>
+                                <img src={`/images/${product.smimage || product.image}`}  className='small-image1'
+                                onClick={() => setMainImage(product.smimage || product.image)}/>
 
-                                <img src={`/images/${product.smimage2}`}  className='small-image2'
-                                onClick={() => setMainImage(product.smimage2)}/>
+                                <img src={`/images/${product.smimage2 || product.image}`}  className='small-image2'
+                                onClick={() => setMainImage(product.smimage2 || product.image)}/>
                             </div>
                             <img src={`/images/${mainImage}`} className='main-image'/>
                         </div>
