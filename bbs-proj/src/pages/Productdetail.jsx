@@ -3,6 +3,8 @@ import { Link, useParams} from 'react-router-dom';
 import './Productdetail.css'
 import ProductCard from "/src/components/product-card";
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '/src/Context/CartContext';
+
 
 const ProductDetail = () => {
     const navigate = useNavigate();
@@ -16,6 +18,10 @@ const ProductDetail = () => {
     const [openSection, setOpenSection] = useState('details');
     const [loading, setLoading] = useState(true);
     // const [morelikethis, setMorelikethis] = useState(true);
+     const { addToCart } = useCart();
+
+   
+
 
     useEffect(() => {
         fetch(`http://localhost:5000/api/products/${id}`)
@@ -60,31 +66,15 @@ const ProductDetail = () => {
     const toggleSection = (section) => {
         setOpenSection(openSection === section ? '' : section);
     };
-    
+
     const handleAddToCart = () => {
-        if (!product) return;
-
-        const cartItem = {
-            id: product.id,
-            title: product.title,
-            price: product.price,
-            image: product.image,
-            qty: quantity
-        };
-
-        const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-        const itemIndex = existingCart.findIndex(item => item.id === product.id);
-
-        if (itemIndex > -1) {
-            existingCart[itemIndex].qty += quantity;
-        } else {
-            existingCart.push(cartItem);
-        }
-
-        localStorage.setItem("cart", JSON.stringify(existingCart));
+       addToCart(product, quantity);
         setAdded(true);
-        setTimeout(() => setAdded(false), 2000);
-    };
+       setTimeout(() => setAdded(false), 2000);
+     };
+
+    
+  
 
     if (loading) {
         return <div className="container"><p style={{padding: '100px', textAlign: 'center'}}>Loading product details...</p></div>;
