@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "/src/components/header";
 import Footer from "/src/components/footer";
 import "./Checkout.css";
+import Progress from "../components/Progress";
 
 const Checkout = () => {
     const navigate = useNavigate();
@@ -50,22 +51,8 @@ return(
     <div>
         <Header/>
         <main className="main">
-             <div className="progress">
-          <div className="step">
-            <div className="circle"></div>
-            <p>Cart</p>
-          </div>
-          <div className="line"></div>
-          <div className="step">
-            <div className="circle active"></div>
-            <p>Checkout</p>
-          </div>
-          <div className="line"></div>
-          <div className="step">
-            <div className="circle"></div>
-            <p>Order Confirmation</p>
-          </div>
-        </div>
+         
+         <Progress currentStep={2} />
 
         <h2>Almost there! Just a few details to complete your order. </h2>
 
@@ -101,7 +88,7 @@ return(
                 <label>Address</label>
                 <input
                 type="text"
-                name="address"
+                name="adreess"
                 value={formData.adreess}
                 onChange={handleChange}
                 />

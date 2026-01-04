@@ -6,43 +6,7 @@
     padding: 20px;
 }
 
-.progress{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin: 40px 0;
-}
 
-.step{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.circle{
-    width: 25px ;
-    height: 25px;
-    border-radius:50% ;
-    background-color:#C6D3D2 ;
-}
-
-.circle.active{
-    background-color:  #1A4359;
-}
-
-.step p{
-    margin-top: 8px;
-    font-family: 'Poppins';
-    font-size: 14px;
-    color:black;
-}
-
-.line{
-    width:70px ;
-    height: 2px;
-    background-color: #C6D3D2 ;
-}
 
 .content p{
     font-size: 16px;
@@ -91,17 +55,7 @@
 
 
 
-     .progress{
-        gap: 15px;
-    }
-
-    .line{
-        width: 40px;
-    }
-
-    .step p{
-        font-size: 12px;
-    }
+   
 
     .section-title{
         font-size: 26px;
@@ -119,22 +73,6 @@
 @media(max-width:480px){
     
 
-    .circle{
-        width: 16px;
-        height: 16px;
-    }
-
-    .line{
-        width: 30px;
-    }
-
-    .progress{
-        gap: 10px;
-    }
-
-    .step p{
-        font-size: 10px;
-    }
 
     .section-title{
         font-size: 20px;

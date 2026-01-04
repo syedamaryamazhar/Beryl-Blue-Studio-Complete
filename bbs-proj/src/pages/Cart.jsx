@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "/src/components/header";
 import Footer from "/src/components/footer";
 import "./Cart.css";
+import Progress from "../components/Progress";
 
 const Cart = () =>{
     const [cart , SetCart] =useState([]);
@@ -59,24 +60,7 @@ const Cart = () =>{
                 <Header />
                 <main className="cart-section">
 
-                    <div className="Progress">
-                        <div className="step">
-                            <div className="circle active"></div>
-                            <p>Cart</p>
-                        </div>
-
-                        <div className="line"></div>
-                        <div className="step">
-                            <div className="circle "></div>
-                            <p>Checkout</p>
-                        </div>
-
-                        <div className="line"></div>
-                        <div className="step">
-                            <div className="circle "></div>
-                            <p>Order Confirmation</p>
-                        </div>
-                        </div>
+                <Progress currentStep={1}/>
 
                         <h2>Your Creative Cart</h2>
 

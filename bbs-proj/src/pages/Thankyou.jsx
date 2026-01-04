@@ -3,6 +3,7 @@ import {  useNavigate } from "react-router-dom";
 import "./Thankyou.css";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import Progress from "../components/Progress";
 
 const Thankyou = () => {
     const navigate = useNavigate() ;
@@ -17,22 +18,9 @@ const Thankyou = () => {
             <main className="container">
                 <section className="customize-sectionn">
 
-        <div className="progress">
-          <div className="step">
-            <div className="circle"></div>
-            <p>Cart</p>
-          </div>
-          <div className="line"></div>
-          <div className="step">
-            <div className="circle" ></div>
-            <p>Checkout</p>
-          </div>
-          <div className="line"></div>
-          <div className="step">
-            <div className="circle active"></div>
-            <p>Order Confirmation</p>
-          </div>
-        </div>
+                  <Progress currentStep={3} />
+
+        
 
         <div className="content">
             <h1 className="section-title">Thank You for the Order!.</h1>
