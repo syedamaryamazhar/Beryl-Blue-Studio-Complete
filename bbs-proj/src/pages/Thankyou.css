@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+body{
+    font-family: 'Poppins' ;
+    background-color:white;
+    margin: 0;
+    padding: 0;
+    color:black;
+}
+
+.container{
+   max-width: 1280px;
+    margin: 0px auto;
+    padding:0 auto;
+}
+
+
+
+        main{
+            width: 85%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        
+
+
+.customize-section{
+    text-align: center;
+    margin: 60px auto 100px;
+    padding: 20px;
+}
+
+.progress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.step{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle{
+    width: 25px ;
+    height: 25px;
+    border-radius:50% ;
+    background-color:#C6D3D2 ;
+}
+
+.circle.active{
+    background-color:  #1A4359;
+}
+
+.step p{
+    margin-top: 8px;
+    font-family: 'Poppins';
+    font-size: 14px;
+    color:black;
+}
+
+.line{
+    width:70px ;
+    height: 2px;
+    background-color: #C6D3D2 ;
+}
+
+.section-title{
+    font-family: 'Playfair Display';
+    font-size: 32px;
+    color:#1A4359;
+    margin-bottom: 20px;
+}
+
+.content p{
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.btn-cont-shop{
+    background-color: #1A4359;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-cont-shop:hover{
+    background-color: #A7C3C6;
+    color: #1A4359;
+}
+
+
+
+@media(max-width: 1024px){
+    
+    
+
+    main{
+        width: 90%;
+    }
+
+    .section-title{
+        font-size: 28px;
+    }
+
+    .content p{
+        font-size: 15px;
+    }
+
+  
+}
+
+@media(max-width: 768px){
+
+
+
+     .progress{
+        gap: 15px;
+    }
+
+    .line{
+        width: 40px;
+    }
+
+    .step p{
+        font-size: 12px;
+    }
+
+    .section-title{
+        font-size: 26px;
+    }
+
+    .btn-cont-shop{
+        width: 100%;
+        font-size: 15px;
+    }
+
+
+
+}
+
+@media(max-width:480px){
+    
+
+    .circle{
+        width: 16px;
+        height: 16px;
+    }
+
+    .line{
+        width: 30px;
+    }
+
+    .progress{
+        gap: 10px;
+    }
+
+    .step p{
+        font-size: 10px;
+    }
+
+    .section-title{
+        font-size: 20px;
+    }
+
+    .content p{
+        font-size: 14px;
+    }
+
+    .btn-cont-shop{
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    
+}
+
+
+
+
+
+        

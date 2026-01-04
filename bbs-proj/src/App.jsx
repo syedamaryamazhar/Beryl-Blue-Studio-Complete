@@ -15,14 +15,18 @@ import CustomizePg2 from './pages/customizepg2';
 import CustomizePg3 from './pages/customizepg3';
 import DoPayment from './pages/dopayment';
 import OrderConfirm from './pages/orderconfirmation';
+import Checkout from './pages/Checkout';
+import Contact from './pages/Contact';
+import Thankyou from './pages/Thankyou';
 import Header from "./components/header";
 import Footer from "./components/footer"
+
 
 function App() {
 
   return (
     <div>
-      <Header />
+      {/* <Header />
       <Routes>
         <Route path="/customizepg1" element={<CustomizePg1 />} />
         <Route path="/customizepg2" element={<CustomizePg2 />} />
@@ -32,8 +36,13 @@ function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/Productspage" element={<Productspage />}/>
         <Route path="/product/:id" element={<ProductDetail />}/>
+         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footer />
+      <Footer /> */}
+      <Thankyou />
+    
     </div>
   );
 }
