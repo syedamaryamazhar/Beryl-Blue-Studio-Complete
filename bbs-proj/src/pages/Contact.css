@@ -1,6 +1,6 @@
 
 
-main {
+.main {
     width:85%;
     margin: 0 auto;
     text-align: center;
@@ -54,7 +54,7 @@ form textarea{
     resize: none;
 }
 
-button{
+.btn{
     display: block;
     margin: 25px auto 0;
     width: 200px;
@@ -67,7 +67,7 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+.btn:hover{
     background-color: #A7C3C6;
 }
 

@@ -49,7 +49,7 @@ const placeOrder = () => {
 return(
     <div>
         <Header/>
-        <main>
+        <main className="main">
              <div className="progress">
           <div className="step">
             <div className="circle"></div>

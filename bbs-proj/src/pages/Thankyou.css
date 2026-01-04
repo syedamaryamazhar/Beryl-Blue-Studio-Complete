@@ -1,42 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-  html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
 
-body{
-    font-family: 'Poppins' ;
-    background-color:white;
-    margin: 0;
-    padding: 0;
-    color:black;
-}
-
-.container{
-   max-width: 1280px;
-    margin: 0px auto;
-    padding:0 auto;
-}
-
-
-
-        main{
-            width: 85%;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        
-
-
-.customize-section{
+.customize-sectionn{
     text-align: center;
     margin: 60px auto 100px;
     padding: 20px;
@@ -78,13 +42,6 @@ body{
     width:70px ;
     height: 2px;
     background-color: #C6D3D2 ;
-}
-
-.section-title{
-    font-family: 'Playfair Display';
-    font-size: 32px;
-    color:#1A4359;
-    margin-bottom: 20px;
 }
 
 .content p{

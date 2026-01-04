@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-p{
+.p{
     font-family: var(--font-poppins);
     font-size: 14px;
     color: #888;

@@ -15,7 +15,7 @@ const Thankyou = () => {
         <div>
             <Header />
             <main className="container">
-                <section className="customize-section">
+                <section className="customize-sectionn">
 
         <div className="progress">
           <div className="step">

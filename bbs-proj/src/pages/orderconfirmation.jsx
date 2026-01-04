@@ -15,7 +15,7 @@ const OrderConfirm = () => {
                     <div className="content">
                         <h1 className="section-title">Thank You for the Order!</h1>
 
-                        <p>Your order is on its way to be handcrafted.</p>
+                        <p className="p">Your order is on its way to be handcrafted.</p>
 
                         <button className="btn-cont-shop" onClick={() =>{ navigate('/')}}>Continue Shopping</button>
                     </div>

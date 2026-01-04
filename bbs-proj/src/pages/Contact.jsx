@@ -45,7 +45,7 @@ const Contact = () => {
         <div>
             <Header />
 
-            <main>
+            <main className="main">
                 <div className="intro">
                     <h2>Let's create Something Beautiful Together.</h2>
                     <p>
@@ -103,7 +103,7 @@ const Contact = () => {
                             onChange={handleChange}
                             ></textarea>
 
-                            <button type="submit">Send message</button>
+                            <button className="btn" type="submit">Send message</button>
                               </form>
                               </section>
 

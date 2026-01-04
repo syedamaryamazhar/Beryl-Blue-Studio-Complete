@@ -145,8 +145,7 @@ const ProductDetail = () => {
                             <div>
                                 <div className='expand-title' onClick={() => toggleSection('details')}>
                                     Details 
-                                    <img src='./images/arrow.svg' className={`expand-icon ${openSection === 'details'?'open':''}`}
-                                    width="16" height="16"/>
+                                    <span className={`expand-icon ${openSection === 'delivery' ? 'open' : ''}`}>▼</span>
                                 </div>
                                 <div className={`expandable-content ${openSection === 'details'?'open':''}`}>
                                     <p><b>Product Category: </b>{product.category}</p>
@@ -160,8 +159,7 @@ const ProductDetail = () => {
                             <div className='expandable-section'>
                                 <div className='expand-title' onClick={() => toggleSection('delivery')}>
                                     Delivery 
-                                    <img src='./images/arrow.svg' className={`expand-icon ${openSection === 'delivery'?'open':''}`}
-                                    width="16" height="16"/>
+                                    <span className={`expand-icon ${openSection === 'delivery' ? 'open' : ''}`}>▼</span>
                                 </div>
                                 <div className={`expandable-content ${openSection === 'delivery'?'open':''}`}>
                                     <p>Expect to get by 19-25 November</p>
@@ -174,8 +172,7 @@ const ProductDetail = () => {
                             <div className='expandable-section'>
                                 <div className='expand-title' onClick={() => toggleSection('policy')}>
                                     Return policy 
-                                    <img src='./images/arrow.svg' className={`expand-icon ${openSection === 'policy'?'open':''}`}
-                                    width="16" height="16"/>
+                                    <span className={`expand-icon ${openSection === 'delivery' ? 'open' : ''}`}>▼</span>
                                 </div>
                                 <div className={`expandable-content ${openSection === 'policy'?'open':''}`}>
                                     <p>Expect to get by 19-25 November</p>
