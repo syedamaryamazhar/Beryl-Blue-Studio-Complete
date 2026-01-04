@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './product-card.css'
 
 const ProductCard = ({ id, title, price, image }) => {
-    const displayImage = image && image.startsWith('http') ? image : `/images${image}`;
+    const displayImage = image && image.startsWith('http') ? image : `/images/${image}`;
     return(
         <div className='ProductCard'>
             <Link to={`/product/${id}`} className='product-box'>

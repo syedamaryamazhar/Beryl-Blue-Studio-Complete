@@ -15,6 +15,7 @@ const ProductDetail = () => {
     const [added, setAdded] = useState(false);
     const [openSection, setOpenSection] = useState('details');
     const [loading, setLoading] = useState(true);
+    // const [morelikethis, setMorelikethis] = useState(true);
 
     useEffect(() => {
         fetch(`http://localhost:5000/api/products/${id}`)
@@ -31,18 +32,29 @@ const ProductDetail = () => {
                 console.error('Error fetching product:', error);
                 setLoading(false);
             });
-        fetch('http://localhost:5000/api/products')
-            .then(response => response.json())
-            .then(data => {
-                const related = data.filter(p => p.id !== parseInt(id)).slice(0,8);
-                setFeaturedProducts(related);
-            })
-            .catch(error => console.error('Error fetching products', error));
 
         setAdded(false);
         setQuantity(1);
         window.scrollTo(0,0);
     }, [id]);
+    
+    useEffect(() => {
+            fetch('http://localhost:5000/api/products')
+                .then(response => {
+                    if(!response.ok) {
+                        throw new Error('Failed to fetch products');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    setFeaturedProducts(data);
+                    setLoading(false);
+                })
+                .catch(error => {
+                    console.error('Error fetching products:', error);
+                    setLoading(false);
+                });
+        }, []);
 
 
     const toggleSection = (section) => {
@@ -120,7 +132,7 @@ const ProductDetail = () => {
                         </div>
 
                             {/* Buttons  */}
-                        <button className={`btn-add-to-cart${added ? 'success': ''}`}
+                        <button className={`btn-add-to-cart ${added ? 'success': ''}`}
                         onClick={handleAddToCart}
                         disabled = {added}>
                             {added ? 'Added to Cart!' : 'Add to Cart'}

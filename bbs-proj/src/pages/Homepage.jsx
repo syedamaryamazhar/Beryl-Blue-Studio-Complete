@@ -1,22 +1,32 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import {useNavigate, BrowserRouter, Routes, Route}  from 'react-router-dom';
 import ProductCard from "/src/components/product-card";
 import './Homepage.css'
 
 const Home = () => {
     const navigate = useNavigate();
+    const [featuredProducts, setFeaturedProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+   
 
-    const featuredProducts = [
-        { id: 1, title:"Torquise Eid Card", price: 300, image: "/images/p1.jpeg"},
-        { id: 2, title: "Mushroom Tags Pack of 7", price: 210, image: "/images/p2.jpeg" },
-        { id: 3, title: "Chemistry Theme Birthday Card", price: 300, image: "/images/p3.jpeg" },
-        { id: 4, title: "Purple Eid Card", price: 300, image: "/images/p4.jpeg" },
-        { id: 5, title: "Mini Yellow Spring Album", price: 600, image: "/images/p5.jpeg" },
-        { id: 6, title: "Watercolor strips Birthday Card", price: 260, image: "/images/bookmark.jpeg" },
-        { id: 7, title: "Cherry Blossoms Card", price: 300, image: "/images/p7.jpeg" },
-        { id: 8, title: "Lavender Greeting Card", price: 300, image: "/images/p8.jpeg" },
-    ];
-
+    useEffect(() => {
+                fetch('http://localhost:5000/api/products')
+                    .then(response => {
+                        if(!response.ok) {
+                            throw new Error('Failed to fetch products');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        setFeaturedProducts(data);
+                        setLoading(false);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching products:', error);
+                        setLoading(false);
+                    });
+            }, []);
+    
     const collections = [
         {name: "Greeting Cards", image: "/images/cards.jpeg"},
         {name: "Bookmarks", image: "/images/bookmark.jpeg"},
