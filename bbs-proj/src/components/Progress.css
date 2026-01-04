@@ -1,0 +1,114 @@
+.progress-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.progress-track {
+  position: relative;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* background line */
+.progress-track::before {
+  content: "";
+  position: absolute;
+  top: 37%;
+  left: 8%;
+  width: 84%;
+  height: 2px;
+  background: #c6d3d2;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* active progress line */
+.progress-line {
+  position: absolute;
+  top: 37%;
+  left: 8%;
+  height: 2px;
+  background: #1a4359;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+/* control how much line fills */
+.progress-line.step-1 { width: 0%; }
+.progress-line.step-2 { width: 42%; }
+.progress-line.step-3 { width: 84%; }
+
+
+.step {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #c6d3d2;
+  margin: 0 auto 8px;
+}
+
+.step.active .circle {
+  background: #1a4359;
+}
+
+@media (max-width: 768px) {
+
+  .progress-container {
+    padding: 0 4%;
+  }
+
+  .step p {
+    font-size: 12px;
+  }
+
+  .circle {
+    width: 20px;
+    height: 20px;
+  }
+
+  .progress-track::before,
+  .progress-line {
+    left: 10%;
+    width: 80%;
+    top: 45%;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .progress-container {
+    padding: 0 3%;
+  }
+
+  .step p {
+    font-size: 10px;
+  }
+
+  .circle {
+    width: 16px;
+    height: 16px;
+  }
+
+  .progress-track::before,
+  .progress-line {
+    left: 12%;
+    width: 76%;
+    top: 46%;
+    height: 1.5px;
+  }
+
+  .progress {
+    gap: 8px;
+  }
+}
+
