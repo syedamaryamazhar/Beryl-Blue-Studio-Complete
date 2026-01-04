@@ -122,3 +122,73 @@ font-size: 18px;
 .btn-next-step:hover { background-color: var(--Secondary); 
     color: var(--Primary);
 }
+
+
+
+    /* TABLET VIEW */
+@media (max-width: 992px) {
+.section-title{
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.customize-subtitle {
+    font-size: 12px;
+}
+
+.progress-bar::before {
+width: 70vw;
+margin-left: 55px;
+top: 13%;
+}
+
+.progress-bar{
+    gap: 12px;
+}
+.step {
+    font-size: 12px;
+}
+.content-grid {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+}
+
+}
+
+/* MOBILE VIEW */
+@media (max-width: 600px) {
+
+.section-title{
+font-size: 22px;
+font-weight: 600;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.progress-bar::before {
+width: 70vw;
+margin-left: 30px;
+top: 13%;
+}
+
+.progress-bar{
+gap: 12px;
+}
+.step {
+font-size: 10px;
+}
+.content-grid {
+grid-template-columns: 1fr;
+max-width: 500px;
+}
+}
+
+@media (993px <= width <= 1024px){
+.progress-bar::before {
+width: 70vw;
+margin-left: 82px;
+top: 13%;
+}
+
+}
