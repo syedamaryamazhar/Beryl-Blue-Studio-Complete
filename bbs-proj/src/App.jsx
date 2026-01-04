@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div>
-      {/* <Header />
+      <Header />
       <Routes>
         <Route path="/customizepg1" element={<CustomizePg1 />} />
         <Route path="/customizepg2" element={<CustomizePg2 />} />
@@ -36,12 +36,15 @@ function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/Productspage" element={<Productspage />}/>
         <Route path="/product/:id" element={<ProductDetail />}/>
+        <Route path="/about" element={<About />} />
          <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/thankyou" element={<Thankyou />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footer /> */}
-      <Checkout />
+      <Footer />
+
+     
     
     </div>
   );

@@ -14,7 +14,7 @@ const Thankyou = () => {
 
     return(
         <div>
-            <Header />
+       
             <main className="container">
                 <section className="customize-sectionn">
 
@@ -31,7 +31,7 @@ const Thankyou = () => {
 
                 </section>
             </main>
-            <Footer />
+          
         </div>
     );
 

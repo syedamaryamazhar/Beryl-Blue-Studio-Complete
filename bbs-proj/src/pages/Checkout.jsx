@@ -49,7 +49,7 @@ const placeOrder = () => {
 
 return(
     <div>
-        <Header/>
+       
         <main className="main">
          
          <Progress currentStep={2} />
@@ -149,7 +149,9 @@ return(
                     Estimate Delivery Date <span>3-5 Jan</span>
                 </p>
 
-                <button className="place-order" onClick={placeOrder}>
+                <button className="place-order" 
+                onClick={() =>{ navigate('/Thankyou')} }>
+
                     Place Order
                 </button>
 
@@ -161,7 +163,7 @@ return(
         </div>
         </main>
 
-        <Footer />
+     
     </div>
 );
 };

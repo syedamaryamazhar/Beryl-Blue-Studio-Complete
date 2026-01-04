@@ -57,7 +57,7 @@ const Cart = () =>{
 
         return(
             <div>
-                <Header />
+              
                 <main className="cart-section">
 
                 <Progress currentStep={1}/>
@@ -115,7 +115,7 @@ const Cart = () =>{
                                                                 </div>
 
                                                                 <button className="checkout"
-                                                                    onClick= {() => navigate ("/checkout")} >
+                                                                  onClick={() =>{ navigate('/Checkout')} }>
                                                                         Checkout
                                                                 </button>
                                                                 
@@ -123,7 +123,7 @@ const Cart = () =>{
                                                                 </div>
                                                                 </main>
 
-                                                                <Footer />
+                                                                
 
        </div>
 

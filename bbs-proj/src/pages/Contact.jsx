@@ -43,7 +43,7 @@ const Contact = () => {
 
     return(
         <div>
-            <Header />
+           
 
             <main className="main">
                 <div className="intro">
@@ -124,7 +124,7 @@ const Contact = () => {
 
                               </section>
             </main>
-            <Footer />
+           
         </div>
     );
 };
