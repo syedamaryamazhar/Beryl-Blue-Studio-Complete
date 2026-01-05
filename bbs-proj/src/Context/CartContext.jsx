@@ -5,9 +5,7 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  /* =========================
-     ADD TO CART
-  ========================== */
+
   const addToCart = (product, qty = 1) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find(
@@ -35,9 +33,7 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  /* =========================
-     INCREASE QUANTITY
-  ========================== */
+
   const increaseQty = (id) => {
     setCart((prevCart) =>
       prevCart.map((item) =>
@@ -48,24 +44,37 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  /* =========================
-     DECREASE QUANTITY
-  ========================== */
-  const decreaseQty = (id) => {
-    setCart((prevCart) =>
-      prevCart
-        .map((item) =>
-          Number(item.id) === Number(id)
-            ? { ...item, qty: item.qty - 1 }
-            : item
-        )
-        .filter((item) => item.qty > 0)
-    );
-  };
+const decreaseQty = (id) => {
+  const item = cart.find(
+    (item) => Number(item.id) === Number(id)
+  );
 
-  /* =========================
-     REMOVE ITEM (OPTIONAL)
-  ========================== */
+  // Ask once BEFORE state update
+  if (item && item.qty === 1) {
+    const confirmRemove = window.confirm(
+      "Quantity is 1. Do you want to remove this item?"
+    );
+
+    if (!confirmRemove) return;
+
+    setCart((prevCart) =>
+      prevCart.filter((item) => Number(item.id) !== Number(id))
+    );
+    return;
+  }
+
+  // qty > 1
+  setCart((prevCart) =>
+    prevCart.map((item) =>
+      Number(item.id) === Number(id)
+        ? { ...item, qty: item.qty - 1 }
+        : item
+    )
+  );
+};
+
+
+
   const removeFromCart = (id) => {
     setCart((prevCart) =>
       prevCart.filter((item) => Number(item.id) !== Number(id))
@@ -87,9 +96,7 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-/* =========================
-   CUSTOM HOOK
-========================== */
+
 export const useCart = () => {
   return useContext(CartContext);
 };
