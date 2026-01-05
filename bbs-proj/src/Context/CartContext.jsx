@@ -1,52 +1,95 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(() => {
-    return JSON.parse(localStorage.getItem("cart")) || [];
-  });
+  const [cart, setCart] = useState([]);
 
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-
-  // ADD TO CART
+  /* =========================
+     ADD TO CART
+  ========================== */
   const addToCart = (product, qty = 1) => {
-    setCart(prev => {
-      const existing = prev.find(item => item.id === product.id);
+    setCart((prevCart) => {
+      const existingItem = prevCart.find(
+        (item) => Number(item.id) === Number(product.id)
+      );
 
-      if (existing) {
-        return prev.map(item =>
-          item.id === product.id
+      if (existingItem) {
+        return prevCart.map((item) =>
+          Number(item.id) === Number(product.id)
             ? { ...item, qty: item.qty + qty }
             : item
         );
       }
 
-      return [...prev, { ...product, qty }];
+      return [
+        ...prevCart,
+        {
+          id: product.id,
+          title: product.title || product.name,
+          price: product.price,
+          image: product.image,
+          qty: qty,
+        },
+      ];
     });
   };
 
-  // UPDATE QTY
-  const updateQty = (id, qty) => {
-    setCart(prev =>
-      prev.map(item =>
-        item.id === id ? { ...item, qty } : item
-      ).filter(item => item.qty > 0)
+  /* =========================
+     INCREASE QUANTITY
+  ========================== */
+  const increaseQty = (id) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        Number(item.id) === Number(id)
+          ? { ...item, qty: item.qty + 1 }
+          : item
+      )
     );
   };
 
-  const subtotal = cart.reduce(
-    (sum, item) => sum + item.price * item.qty,
-    0
-  );
+  /* =========================
+     DECREASE QUANTITY
+  ========================== */
+  const decreaseQty = (id) => {
+    setCart((prevCart) =>
+      prevCart
+        .map((item) =>
+          Number(item.id) === Number(id)
+            ? { ...item, qty: item.qty - 1 }
+            : item
+        )
+        .filter((item) => item.qty > 0)
+    );
+  };
+
+  /* =========================
+     REMOVE ITEM (OPTIONAL)
+  ========================== */
+  const removeFromCart = (id) => {
+    setCart((prevCart) =>
+      prevCart.filter((item) => Number(item.id) !== Number(id))
+    );
+  };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, updateQty, subtotal }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        increaseQty,
+        decreaseQty,
+        removeFromCart,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
 };
 
-export const useCart = () => useContext(CartContext);
+/* =========================
+   CUSTOM HOOK
+========================== */
+export const useCart = () => {
+  return useContext(CartContext);
+};
