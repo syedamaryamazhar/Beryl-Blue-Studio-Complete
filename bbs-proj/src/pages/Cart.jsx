@@ -12,10 +12,10 @@ const Cart = () => {
   
   const navigate = useNavigate();
 
-  // ✅ cart from context
+
   const { cart, increaseQty, decreaseQty } = useCart();
 
-  // ✅ totals
+  
   const subtotal = cart.reduce(
     (sum, item) => sum + item.price * item.qty,
     0
@@ -45,7 +45,7 @@ const Cart = () => {
                 <div className="cart-item" key={item.id}>
                   <div className="item-info">
                     <div className="item-img">
-                      {/* ✅ image fixed */}
+                
                       <img
                         src={`/images/${item.image}`}
                         className="image"
@@ -60,7 +60,7 @@ const Cart = () => {
                     </div>
                   </div>
 
-                  {/* ✅ buttons now work */}
+                
                   <div className="box">
                     <button onClick={() => decreaseQty(item.id)}>-</button>
                     <input type="text" value={item.qty} disabled />
