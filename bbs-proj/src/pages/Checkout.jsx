@@ -8,7 +8,7 @@ const Checkout = () => {
   const navigate = useNavigate();
   const { cart } = useCart();
 
-  // ✅ Form State
+  
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -16,10 +16,10 @@ const Checkout = () => {
     adreess: "",
   });
 
-  // ✅ Payment State
+  
   const [payment, setPayment] = useState("");
 
-  // ✅ Totals
+  
   const subtotal = cart.reduce(
     (sum, item) => sum + item.price * item.qty,
     0
@@ -28,12 +28,12 @@ const Checkout = () => {
   const shipping = 200;
   const total = subtotal + shipping;
 
-  // ✅ Handle input change
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // ✅ Place order
+
   const placeOrder = async () => {
     const { name, phone, email, adreess } = formData;
 
@@ -80,7 +80,7 @@ const Checkout = () => {
 
         <h2>Almost there! Just a few details to complete your order.</h2>
 
-        {/* DELIVERY INFO */}
+    
         <section className="delivery-info">
           <h3>Delivery Information</h3>
           <p className="guest-note">You are checking out as a guest.</p>
@@ -126,39 +126,46 @@ const Checkout = () => {
         </section>
 
         <div className="check">
-          {/* PAYMENT */}
+
           <div className="payment">
             <h4>Payment Options</h4>
 
-            <label>
-              <input
-                type="radio"
-                name="payment"
-                onChange={() => setPayment("card")}
-              />
-              Credit / Debit Card
-            </label>
+           <label>
+  <input
+    type="radio"
+    name="payment"
+    value="card"
+    checked={payment === "card"}
+    onChange={(e) => setPayment(e.target.value)}
+  />
+  Credit / Debit Card
+</label>
 
-            <label>
-              <input
-                type="radio"
-                name="payment"
-                onChange={() => setPayment("easypaisa")}
-              />
-              Easypaisa
-            </label>
+<label>
+  <input
+    type="radio"
+    name="payment"
+    value="easypaisa"
+    checked={payment === "easypaisa"}
+    onChange={(e) => setPayment(e.target.value)}
+  />
+  Easypaisa
+</label>
 
-            <label>
-              <input
-                type="radio"
-                name="payment"
-                onChange={() => setPayment("cod")}
-              />
-              Cash on Delivery
-            </label>
+<label>
+  <input
+    type="radio"
+    name="payment"
+    value="cod"
+    checked={payment === "cod"}
+    onChange={(e) => setPayment(e.target.value)}
+  />
+  Cash on Delivery
+</label>
+
           </div>
 
-          {/* ORDER SUMMARY */}
+    
           <div className="summary">
             <h4>Order Summary</h4>
 
