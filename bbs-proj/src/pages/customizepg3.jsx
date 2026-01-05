@@ -8,9 +8,10 @@ const CustomizePg3 = () => {
     const [details, setDetails] = useState({
         name: '',
         phone: '',
+        email:'',
         address: '',
         saveInfo: false,
-        PaymentMethod: 'credit_card'
+        paymentMethod: 'credit_card'
     });
 
     const handleChange = (e) => {
@@ -60,14 +61,7 @@ const CustomizePg3 = () => {
                                     <label htmlFor="credit_card">Credit/Debit card</label>
                                 </div>
                                 <div className="payment-option" onClick={() => setDetails(d => ({...d, paymentMethod: 'easypaisa'}))}>
-                                    <input 
-                                        type="radio" 
-                                        name="paymentMethod" 
-                                        id="easypaisa" 
-                                        value="easypaisa"
-                                        checked={details.paymentMethod === 'easypaisa'}
-                                        onChange={handleChange}
-                                    />
+                                    <input type="radio" name="paymentMethod" id="easypaisa" value="easypaisa" checked={details.paymentMethod === 'easypaisa'} onChange={handleChange}/>
                                     <label htmlFor="easypaisa">Easypaisa</label>
                                 </div>
                                 <p className="payment-info">Payment is done in advance for customized orders</p>

@@ -5,7 +5,7 @@ import './customizepg2.css'
 
 const CustomizePg2 = () => {
     const navigate = useNavigate();
-    const [formData, steFormData] = useState({
+    const [formData, setFormData] = useState({
         occasion:'',
         colorTheme: '',
         size: '',
@@ -16,7 +16,7 @@ const CustomizePg2 = () => {
 
     const handleChange = (e) => {
         const {name, value} = e.target;
-        steFormData(prev => ({...prev, [name]:value}));
+        setFormData(prev => ({...prev, [name]:value}));
     };
 
     return(
@@ -62,7 +62,7 @@ const CustomizePg2 = () => {
                                 <input type="text" id="msgFront" name="msgFront" placeholder="E.g Happy Birthday Sarah!" value={formData.msgFront} onChange={handleChange}/>
 
                                 <label htmlFor="msgInside">Message inside (optional)</label>
-                                <input type="text" id="msgInside" name="msgFront" placeholder="E.g have a good day!" value={formData.msgInside} onChange={handleChange}/>
+                                <input type="text" id="msgInside" name="msgInside" placeholder="E.g have a good day!" value={formData.msgInside} onChange={handleChange}/>
 
                                 <label>Include Envelope</label>
                                 <div className="radio-group">
