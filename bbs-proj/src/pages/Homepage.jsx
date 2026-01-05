@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from "react";
-import {useNavigate, BrowserRouter, Routes, Route}  from 'react-router-dom';
+import {useNavigate}  from 'react-router-dom';
 import ProductCard from "/src/components/product-card";
 import './Homepage.css'
 
