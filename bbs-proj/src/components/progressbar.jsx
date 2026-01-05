@@ -11,7 +11,6 @@ const ProgressBar = ({ currentStep = 0 }) => {
         {steps.map((label, index) => {
           let stepClass = "step";
           if (index === currentStep) stepClass += " active";
-          if (index < currentStep) stepClass += " completed";
 
           return (
             <div key={index} className={stepClass}>

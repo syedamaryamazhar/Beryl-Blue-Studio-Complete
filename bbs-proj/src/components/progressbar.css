@@ -19,7 +19,7 @@
         .progress-bar::before {
             content: '';
             position: absolute;
-            width: 920px;
+            width: 810px;
             height: 1px;
             margin-left: 110px;
             background-color: #999;
