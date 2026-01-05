@@ -77,11 +77,11 @@ const ProductDetail = () => {
   
 
     if (loading) {
-        return <div className="container"><p style={{padding: '100px', textAlign: 'center'}}>Loading product details...</p></div>;
+        return <div className="container"><p>Loading product details...</p></div>;
     }
 
     if (!product) {
-        return <div className="container"><p style={{padding: '100px', textAlign: 'center'}}>Product not found.</p></div>;
+        return <div className="container"><p>Product not found.</p></div>;
     }
 
     return(
@@ -93,11 +93,11 @@ const ProductDetail = () => {
                     <div className='detail-left'>
                         <div className='product-images'>
                             <div className='small-image-gallery'>
-                                <img src={`/images/${product.smimage || product.image}`}  className='small-image1'
-                                onClick={() => setMainImage(product.smimage || product.image)}/>
+                                <img src={`/images/${product.smimage}`}  className='small-image1'
+                                onClick={() => setMainImage(product.smimage)}/>
 
-                                <img src={`/images/${product.smimage2 || product.image}`}  className='small-image2'
-                                onClick={() => setMainImage(product.smimage2 || product.image)}/>
+                                <img src={`/images/${product.smimage2}`}  className='small-image2'
+                                onClick={() => setMainImage(product.smimage2)}/>
                             </div>
                             <img src={`/images/${mainImage}`} className='main-image'/>
                         </div>

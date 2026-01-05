@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Link, BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import './Productspage.css'
 import ProductCard from "/src/components/product-card";
 
@@ -41,11 +41,6 @@ const ProductsPage = () => {
 
     const filteredProducts = activeCategory === 'all'? products:products.filter(p => p.category === activeCategory);
     
-    if(loading){
-        return(
-            <div></div>
-        );
-    }
 
     return(
         <div className='productspage'>
@@ -86,10 +81,10 @@ const ProductsPage = () => {
             </section>
 
             <section className='pagination'>
-                <Link to="/" class="page-number active">1</Link>
-                <Link to="/" class="page-number">2</Link>
-                <Link to="/" class="page-number">3</Link>
-                <Link to="/" class="page-number">4</Link>
+                <Link to="/" className="page-number active">1</Link>
+                <Link to="/" className="page-number">2</Link>
+                <Link to="/" className="page-number">3</Link>
+                <Link to="/" className="page-number">4</Link>
             </section>
 
         </div>
