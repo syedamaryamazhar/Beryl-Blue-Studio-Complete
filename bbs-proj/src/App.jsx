@@ -18,6 +18,7 @@ import OrderConfirm from './pages/orderconfirmation';
 import Checkout from './pages/Checkout';
 import Contact from './pages/Contact';
 import Thankyou from './pages/Thankyou';
+import Payment from './pages/Payment';
 import Header from "./components/header";
 import Footer from "./components/footer"
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="/about" element={<About />} />
          <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="/thankyou" element={<Thankyou />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

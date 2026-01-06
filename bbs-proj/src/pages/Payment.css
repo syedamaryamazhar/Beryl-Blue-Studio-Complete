@@ -1,0 +1,155 @@
+/* PAGE WRAPPER */
+.Payment{
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding: 40px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* MAIN CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* SECTION */
+.customize-section {
+  margin-top: 20px;
+}
+
+/* GRID LAYOUT */
+.content-grid {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  align-items: flex-start;
+}
+
+/* PAYMENT FORM */
+.payment-form {
+  flex: 1;
+  background-color: #f7eaea;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.form-title {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.payment-form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  margin-top: 15px;
+}
+
+.payment-form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* CONFIRM BUTTON */
+.btn-next-step {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #1a4359;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-next-step:hover {
+  background-color: #a7c3c6;
+  color: #000;
+}
+
+.email-confirmation-text {
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ORDER SUMMARY */
+.total-summary {
+  width: 350px;
+  background-color: #f7eaea;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.summary-title {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* CART ITEMS */
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.summary-row p {
+  margin: 0;
+}
+
+/* PRICE DETAILS */
+.total-summary .p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.total-summary hr {
+  border: 0.5px solid #ccc;
+  margin: 15px 0;
+}
+
+/* TOTAL */
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .content-grid {
+    flex-direction: column;
+  }
+
+  .total-summary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-title,
+  .summary-title {
+    font-size: 18px;
+  }
+
+  .btn-next-step {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
