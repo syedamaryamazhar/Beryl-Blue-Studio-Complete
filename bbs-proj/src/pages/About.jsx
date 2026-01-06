@@ -33,11 +33,11 @@ const About = () =>{
                         </p>
                     </div>
 
-                       <img src="/images/img1.jpg" alt="Origin" className="image" />
+                       <img src="/images/about-img-1.jpeg" alt="Origin" className="image" />
                        </section>
 
                        <section className="timeline">
-                           <img src="/images/img1.jpg" alt="Origin" className="image" />
+                           <img src="/images/about-img-2.jpeg" alt="Origin" className="image" />
 
                            <div className="text">
                             <h3>Timeline of Our Creative Journey</h3>
