@@ -60,6 +60,7 @@ const Payment = () => {
         
        
         navigate("/Thankyou"); 
+        window.location.reload();
       } else {
         const err = await response.json();
         alert("Payment failed: " + err.message);

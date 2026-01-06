@@ -66,6 +66,8 @@ const Checkout = () => {
 
       if (response.ok) {
         navigate("/thankyou");
+        window.location.reload();
+        
       } else {
         alert("Order failed");
       }
