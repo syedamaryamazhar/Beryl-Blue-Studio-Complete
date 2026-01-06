@@ -1,4 +1,4 @@
-/* PAGE WRAPPER */
+
 .Payment{
   background-color: #ffffff;
   min-height: 100vh;
@@ -6,19 +6,18 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* MAIN CONTAINER */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* SECTION */
+
 .customize-section {
   margin-top: 20px;
 }
 
-/* GRID LAYOUT */
+
 .content-grid {
   display: flex;
   gap: 40px;
@@ -26,7 +25,7 @@
   align-items: flex-start;
 }
 
-/* PAYMENT FORM */
+
 .payment-form {
   flex: 1;
   background-color: #f7eaea;
@@ -56,7 +55,7 @@
   font-size: 14px;
 }
 
-/* CONFIRM BUTTON */
+
 .btn-next-step {
   width: 100%;
   margin-top: 20px;
@@ -83,7 +82,7 @@
   text-align: center;
 }
 
-/* ORDER SUMMARY */
+
 .total-summary {
   width: 350px;
   background-color: #f7eaea;
@@ -98,7 +97,7 @@
   margin-bottom: 15px;
 }
 
-/* CART ITEMS */
+
 .summary-row {
   display: flex;
   justify-content: space-between;
@@ -110,7 +109,6 @@
   margin: 0;
 }
 
-/* PRICE DETAILS */
 .total-summary .p {
   display: flex;
   justify-content: space-between;
@@ -123,7 +121,6 @@
   margin: 15px 0;
 }
 
-/* TOTAL */
 .total {
   display: flex;
   justify-content: space-between;
@@ -131,7 +128,6 @@
   font-size: 16px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 1024px) {
   .content-grid {
     flex-direction: column;

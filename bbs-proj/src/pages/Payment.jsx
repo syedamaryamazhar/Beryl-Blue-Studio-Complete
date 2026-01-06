@@ -55,18 +55,17 @@ const Payment = () => {
       });
 
       if (response.ok) {
-        // ✅ We removed clearCart() to prevent the "is not a function" error
-        // Instead, we just clear the storage and move to the next page
+      
         localStorage.removeItem("cart"); 
         
-        // Ensure this path matches your App.js route (e.g., "/thankyou")
+       
         navigate("/Thankyou"); 
       } else {
         const err = await response.json();
         alert("Payment failed: " + err.message);
       }
     } catch (error) {
-      // This will now only trigger if there is a REAL network/server issue
+    
       console.error("Payment error:", error);
       alert("System Error: " + error.message);
     }

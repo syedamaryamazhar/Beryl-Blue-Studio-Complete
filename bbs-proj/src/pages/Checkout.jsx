@@ -12,7 +12,7 @@ const Checkout = () => {
     name: "",
     phone: "",
     email: "",
-    address: "", // ✅ FIXED: Changed from "adreess" to "address"
+    address: "", 
   });
 
   const [payment, setPayment] = useState("");
@@ -41,7 +41,7 @@ const Checkout = () => {
       navigate("/payment", {
         state: {
           payment: payment,
-          customer: formData // ✅ Passing fixed data
+          customer: formData 
         }
       });
       return;
@@ -55,7 +55,7 @@ const Checkout = () => {
           name,
           phone,
           email,
-          address, // ✅ Using fixed spelling
+          address, 
           payment,
           subtotal,
           shipping,
@@ -98,7 +98,7 @@ const Checkout = () => {
             <label>Address</label>
             <input
               type="text"
-              name="address" // ✅ FIXED: Changed from "adreess"
+              name="address"
               value={formData.address}
               onChange={handleChange}
             />
